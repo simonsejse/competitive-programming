@@ -1,0 +1,35 @@
+name: Update README
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: "0 * * * *" # Optional: Schedule to run every hour
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Run README update script
+        run: |
+          python .github/workflows/update_readme.py
+
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }} # Use your secret token here
+        run: |
+          git config --local user.name "GitHub Actions"
+          git config --local user.email "actions@github.com"
+          git add README.md
+          git commit -m "Auto-update README with problem counts"
+          git push
