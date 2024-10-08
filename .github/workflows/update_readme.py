@@ -83,10 +83,10 @@ class MarkdownFormatter:
 
         # Add each language count to the table
         for language, count in language_counts.items():
-            markdown += f"| {language} | {count} |\n"
+            markdown += f"| {language} | {count - 1} |\n"
 
         # Add total count row
-        markdown += f"| **Total** | **{total_count}** |\n"
+        markdown += f"| **Total** | **{total_count - len(language_counts)}** |\n"
 
         return markdown
 
@@ -128,5 +128,5 @@ if __name__ == "__main__":
     file_counter    = FileCounter(LANGUAGES)
     md_formatter    = MarkdownFormatter()
     readme_updater  = ReadmeUpdater(readme_path, md_formatter, file_counter)
-    
+
     readme_updater.update_readme(repo_directory)
