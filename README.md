@@ -21,4 +21,3 @@
 
 - **`.github/workflows/`**: Contains automation scripts for CI/CD.
 - **`README.md`**: Contains project description and auto-generated stats.
-- **`solution_files/`**: Directory with problem solutions categorized by language.
