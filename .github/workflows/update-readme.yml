@@ -31,5 +31,5 @@ jobs:
           git config --local user.name "GitHub Actions"
           git config --local user.email "actions@github.com"
           git add README.md
-          git commit -m "Auto-update README with problem counts"
+          git commit -m "📝 DOCS: Automatic CI/CD Update of README"
           git push
