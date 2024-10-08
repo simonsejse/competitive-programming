@@ -59,6 +59,26 @@ class HTMLFormatter:
 
         return html
 
+class MarkdownFormatter:
+    """Formats the language statistics into a Markdown table."""
+    def format(self, language_counts):
+        """Generate a Markdown table for displaying results."""
+        total_count = sum(language_counts.values())
+
+        # Use Markdown formatting with emoji
+        markdown = "## 📊 Problem Solving Statistics\n\n"
+        markdown += "| Language | Files Solved |\n"
+        markdown += "|----------|--------------|\n"
+
+        # Add each language count to the table
+        for language, count in language_counts.items():
+            markdown += f"| {language} | {count} |\n"
+
+        # Add total count row
+        markdown += f"| **Total** | **{total_count}** |\n"
+
+        return markdown
+
 
 class ReadmeUpdater:
     """Updates the README.md file with new language statistics."""
@@ -97,7 +117,7 @@ if __name__ == "__main__":
 
     repo_directory = os.path.abspath(os.path.join(os.getcwd(), "../.."))
     file_counter = FileCounter(LANGUAGES)
-    html_formatter = HTMLFormatter()
-    readme_updater = ReadmeUpdater(readme_path, html_formatter, file_counter)
+    md_formatter = MarkdownFormatter()
+    readme_updater = ReadmeUpdater(readme_path, md_formatter, file_counter)
 
     readme_updater.update_readme(repo_directory)
