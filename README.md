@@ -7,7 +7,14 @@
 - **Auto-updated Statistics**:
 
 <!-- START_SOLVED_STATS -->
-<div style="font-family: Arial, sans-serif; margin: 20px; width: 400px;"><div style="background-color: #007bff; color: white; padding: 15px; font-size: 20px; text-align: center; border-radius: 5px 5px 0 0;">Problem Solving Statistics</div><div style="background-color: #f3f4f7; padding: 20px; border: 1px solid #ddd; border-top: none; border-radius: 0 0 5px 5px;"><table style="width: 100%; border-collapse: collapse; margin-top: 10px;"><thead style="background-color: #007bff; color: #ffffff;"><tr><th style="padding: 8px; border: 1px solid #ddd;">Language</th><th style="padding: 8px; border: 1px solid #ddd;">Files Solved</th></tr></thead><tbody><tr><td style="padding: 8px; border: 1px solid #ddd; background-color: #e9ecef;">C++</td><td style="padding: 8px; border: 1px solid #ddd; background-color: #ffffff;">8</td></tr><tr><td style="padding: 8px; border: 1px solid #ddd; background-color: #e9ecef;">Python</td><td style="padding: 8px; border: 1px solid #ddd; background-color: #ffffff;">4</td></tr></tbody><tfoot><tr><th style="padding: 8px; border: 1px solid #ddd; background-color: #e9ecef;">Total</th><th style="padding: 8px; border: 1px solid #ddd; background-color: #ffffff;">12</th></tr></tfoot></table></div></div>
+## 📊 Problem Solving Statistics
+
+| Language | Files Solved |
+|----------|--------------|
+| C++ | 8 |
+| Python | 4 |
+| **Total** | **12** |
+
 <!-- END_SOLVED_STATS -->
 
 ## 📂 Directory Structure
