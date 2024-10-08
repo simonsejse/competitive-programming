@@ -6,7 +6,6 @@ LANGUAGES = [
     ('Python', '.py'),
 ]
 
-
 class FileCounter:
     """Counts files based on language and extension in the root directory only."""
     def __init__(self, languages):
