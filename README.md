@@ -3,7 +3,7 @@
 ## 🔗 [Kattis Profile](https://open.kattis.com/users/simon-winther-albertsen)
 
 - **Repository Purpose**: This repository contains solutions to competitive programming problems, primarily from Kattis.
-- **Language Focus**: C++ and Python
+- **Language Used**: C++ and Python (could add this to CI/CD later)
 - **Auto-updated Statistics**:
 
 <!-- START_SOLVED_STATS -->

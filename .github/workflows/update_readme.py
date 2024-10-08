@@ -6,20 +6,27 @@ LANGUAGES = [
     ('Python', '.py'),
 ]
 
+
 class FileCounter:
-    """Counts files based on language and extension."""
-    def __init__(self, languages):
+    """Counts files based on language and extension, excluding specified directories."""
+    def __init__(self, languages, exclude_dirs=None):
         self.languages = languages
+        self.exclude_dirs = exclude_dirs if exclude_dirs else []
 
     def count_files(self, directory):
-        """Count files by extension for the given directory."""
+        """Count files by extension in the root directory, excluding specific directories."""
         language_counts = {lang: 0 for lang, _ in self.languages}
-        for root, _, files in os.walk(directory):
-            for file in files:
+
+        for file in os.listdir(directory):
+            file_path = os.path.join(directory, file)
+            
+            if not file.startswith(".") and os.path.isfile(file_path) and file_path not in self.exclude_dirs:
                 for lang, ext in self.languages:
                     if file.endswith(ext):
                         language_counts[lang] += 1
+
         return language_counts
+
 class HTMLFormatter:
     """Formats the language statistics into a styled HTML table."""
     def format(self, language_counts):
@@ -66,7 +73,7 @@ class MarkdownFormatter:
         total_count = sum(language_counts.values())
 
         # Use Markdown formatting with emoji
-        markdown = "## 📊 Problem Solving Statistics\n\n"
+        markdown = "#### 📊 Problem Solving Statistics\n\n"
         markdown += "| Language | Files Solved |\n"
         markdown += "|----------|--------------|\n"
 
@@ -113,11 +120,13 @@ class ReadmeUpdater:
 
 
 if __name__ == "__main__":
-    readme_path = os.path.join(os.getenv('GITHUB_WORKSPACE', ''), 'README.md')
-
-    repo_directory = os.path.abspath(os.path.join(os.getcwd(), "../.."))
-    file_counter = FileCounter(LANGUAGES)
-    md_formatter = MarkdownFormatter()
-    readme_updater = ReadmeUpdater(readme_path, md_formatter, file_counter)
+    readme_path     = os.path.join(os.getenv('GITHUB_WORKSPACE', ''), 'README.md')
+    repo_directory  = os.path.abspath(os.path.join(os.getcwd(), "../.."))
+    exclude_dirs    = [os.path.abspath(os.path.join(repo_directory, ".github")), 
+                       os.path.abspath(os.path.join(repo_directory, ".vscode"))]
+    
+    file_counter    = FileCounter(LANGUAGES, exclude_dirs)
+    md_formatter    = MarkdownFormatter()
+    readme_updater  = ReadmeUpdater(readme_path, md_formatter, file_counter)
 
     readme_updater.update_readme(repo_directory)
