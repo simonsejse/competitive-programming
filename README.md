@@ -11,9 +11,9 @@
 
 | Language | Files Solved |
 |----------|--------------|
-| C++ | 0 |
-| Python | 0 |
-| **Total** | **0** |
+| C++ | 8 |
+| Python | 1 |
+| **Total** | **9** |
 
 <!-- END_SOLVED_STATS -->
 
