@@ -32,6 +32,9 @@ using namespace std;
 #define cf(i,s,e) for(long long int i=s;i<=e;i++)
 #define rf(i,e,s) for(long long int i=e-1;i>=s;i--)
 #define pb push_back
+#define mp make_pair
+#define F first
+#define S second
 #define eb emplace_back
 #define T(cond, a, b) ((cond) ? (a) : (b)) // Short ternary operator
 #define trav(a, x) for(auto& a : x)        // Iterate over elements of a container
@@ -77,6 +80,5 @@ int main(int argc, char* argv[]) {
 #endif
   ll N, P;
   cin >> N >> P;
-
   return 0;
 }
