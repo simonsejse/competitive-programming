@@ -7,7 +7,7 @@
 - **Auto-updated Statistics**:
 
 <!-- START_SOLVED_STATS -->
-#### 📊 Problem Solving Statistics (Auto update)
+#### 📊 Problem Solving Statistics
 
 | Language | Files Solved |
 |----------|--------------|
