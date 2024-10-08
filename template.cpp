@@ -1,4 +1,18 @@
-#include "stdimp.h"
+#include <algorithm>
+#include <cassert>
+#include <cmath>
+#include <cstdio>
+#include <cstdlib>
+#include <cstring>
+#include <ctime>
+#include <iostream>
+#include <map>
+#include <queue>
+#include <set>
+#include <stack>
+#include <string>
+#include <vector>
+
 using namespace std;
 
 /* clang-format off */
@@ -19,6 +33,12 @@ using namespace std;
 #define rf(i,e,s) for(long long int i=e-1;i>=s;i--)
 #define pb push_back
 #define eb emplace_back
+#define T(cond, a, b) ((cond) ? (a) : (b)) // Short ternary operator
+#define trav(a, x) for(auto& a : x)        // Iterate over elements of a container
+
+/* MATH SHORTCUTS */
+#define flr(x) floor(x)          // Shortcut for floor
+#define cl(x) ceil(x)            // Shortcut for ceil
 
 /* PRINTS */
 template <class T>
@@ -47,6 +67,7 @@ typedef long long int int64;
 typedef unsigned long long int  uint64;
 
 /* clang-format on */
+#define ONLINE_JUDGE 1
 
 int main(int argc, char* argv[]) {
   ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
@@ -54,8 +75,8 @@ int main(int argc, char* argv[]) {
   freopen("input.txt", "r", stdin);   // input.txt
   freopen("output.txt", "w", stdout); // output.txt
 #endif
-
-  // Your Code Goes Here.
+  ll N, P;
+  cin >> N >> P;
 
   return 0;
 }

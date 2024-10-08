@@ -34,6 +34,7 @@ using namespace std;
 #define pb push_back
 #define eb emplace_back
 #define T(cond, a, b) ((cond) ? (a) : (b)) // Short ternary operator
+#define trav(a, x) for(auto& a : x)        // Iterate over elements of a container
 
 /* MATH SHORTCUTS */
 #define flr(x) floor(x)          // Shortcut for floor
