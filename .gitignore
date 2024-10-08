@@ -1,0 +1,10 @@
+.cph/
+
+
+.clang-format
+.vscode
+*.exe 
+*.out
+*.o
+*.txt
+*.pdf
