@@ -16,16 +16,19 @@ class FileCounter:
         """Count files by extension in the root directory only."""
         language_counts = {lang: 0 for lang, _ in self.languages}
 
-        # Only check files in the root directory, excluding directories
+        print(f"Scanning directory: {directory}")  # Debugging line
+        # Only check files in the specified root directory, excluding subdirectories
         for file in os.listdir(directory):
             file_path = os.path.join(directory, file)
-            
-            # Count only files, ignore directories
-            if os.path.isfile(file_path):
+
+            # Count only files directly in the root directory, not subdirectories
+            if os.path.isfile(file_path) and os.path.dirname(file_path) == directory:
                 for lang, ext in self.languages:
                     if file.endswith(ext):
                         language_counts[lang] += 1
+                        print(f"Counted {file}: {lang}")  # Debugging line
 
+        print("Final Language Counts:", language_counts)  # Debugging line
         return language_counts
 
 class HTMLFormatter:
@@ -121,8 +124,9 @@ class ReadmeUpdater:
 
 if __name__ == "__main__":
     readme_path     = os.path.join(os.getenv('GITHUB_WORKSPACE', ''), 'README.md')
-    repo_directory  = os.path.abspath(os.path.join(os.getcwd(), "../.."))
+    repo_directory = os.getenv('GITHUB_WORKSPACE', os.getcwd())
     file_counter    = FileCounter(LANGUAGES)
     md_formatter    = MarkdownFormatter()
     readme_updater  = ReadmeUpdater(readme_path, md_formatter, file_counter)
+    
     readme_updater.update_readme(repo_directory)
