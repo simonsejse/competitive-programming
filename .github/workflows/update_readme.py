@@ -20,54 +20,45 @@ class FileCounter:
                     if file.endswith(ext):
                         language_counts[lang] += 1
         return language_counts
-
 class HTMLFormatter:
     """Formats the language statistics into a styled HTML table."""
     def format(self, language_counts):
-        """Generate a styled HTML card for displaying results."""
+        """Generate a styled HTML card for displaying results without extra spaces or newlines."""
         total_count = sum(language_counts.values())
 
-        # Create a modern styled HTML block using CSS
-        html = """
-        <div style="font-family: Arial, sans-serif; margin: 20px; width: 400px;">
-            <div style="background-color: #007bff; color: white; padding: 15px; font-size: 20px; text-align: center; border-radius: 5px 5px 0 0;">
-                Problem Solving Statistics
-            </div>
-            <div style="background-color: #f3f4f7; padding: 20px; border: 1px solid #ddd; border-top: none; border-radius: 0 0 5px 5px;">
-                <table style="width: 100%; border-collapse: collapse; margin-top: 10px;">
-                    <thead style="background-color: #007bff; color: #ffffff;">
-                        <tr>
-                            <th style="padding: 8px; border: 1px solid #ddd;">Language</th>
-                            <th style="padding: 8px; border: 1px solid #ddd;">Files Solved</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-        """
+        # Create a single-line HTML block to prevent Markdown formatting issues
+        html = (
+            '<div style="font-family: Arial, sans-serif; margin: 20px; width: 400px;">'
+            '<div style="background-color: #007bff; color: white; padding: 15px; font-size: 20px; text-align: center; border-radius: 5px 5px 0 0;">'
+            'Problem Solving Statistics'
+            '</div>'
+            '<div style="background-color: #f3f4f7; padding: 20px; border: 1px solid #ddd; border-top: none; border-radius: 0 0 5px 5px;">'
+            '<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">'
+            '<thead style="background-color: #007bff; color: #ffffff;">'
+            '<tr><th style="padding: 8px; border: 1px solid #ddd;">Language</th>'
+            '<th style="padding: 8px; border: 1px solid #ddd;">Files Solved</th></tr>'
+            '</thead><tbody>'
+        )
 
         # Add each language count to the table
         for language, count in language_counts.items():
-            html += f"""
-            <tr>
-                <td style="padding: 8px; border: 1px solid #ddd; background-color: #e9ecef;">{language}</td>
-                <td style="padding: 8px; border: 1px solid #ddd; background-color: #ffffff;">{count}</td>
-            </tr>
-            """
+            html += (
+                f'<tr>'
+                f'<td style="padding: 8px; border: 1px solid #ddd; background-color: #e9ecef;">{language}</td>'
+                f'<td style="padding: 8px; border: 1px solid #ddd; background-color: #ffffff;">{count}</td>'
+                f'</tr>'
+            )
 
         # Add total count row
-        html += f"""
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th style="padding: 8px; border: 1px solid #ddd; background-color: #e9ecef;">Total</th>
-                            <th style="padding: 8px; border: 1px solid #ddd; background-color: #ffffff;">{total_count}</th>
-                        </tr>
-                    </tfoot>
-                </table>
-            </div>
-        </div>
-        """
+        html += (
+            '</tbody><tfoot>'
+            f'<tr><th style="padding: 8px; border: 1px solid #ddd; background-color: #e9ecef;">Total</th>'
+            f'<th style="padding: 8px; border: 1px solid #ddd; background-color: #ffffff;">{total_count}</th>'
+            '</tr></tfoot></table></div></div>'
+        )
 
         return html
+
 
 class ReadmeUpdater:
     """Updates the README.md file with new language statistics."""
