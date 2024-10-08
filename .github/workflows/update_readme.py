@@ -118,7 +118,6 @@ class ReadmeUpdater:
         else:
             print("Markers not found in README.md")
 
-
 if __name__ == "__main__":
     readme_path     = os.path.join(os.getenv('GITHUB_WORKSPACE', ''), 'README.md')
     repo_directory  = os.path.abspath(os.path.join(os.getcwd(), "../.."))
