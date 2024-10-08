@@ -8,19 +8,20 @@ LANGUAGES = [
 
 
 class FileCounter:
-    """Counts files based on language and extension, excluding specified directories."""
-    def __init__(self, languages, exclude_dirs=None):
+    """Counts files based on language and extension in the root directory only."""
+    def __init__(self, languages):
         self.languages = languages
-        self.exclude_dirs = exclude_dirs if exclude_dirs else []
 
     def count_files(self, directory):
-        """Count files by extension in the root directory, excluding specific directories."""
+        """Count files by extension in the root directory only."""
         language_counts = {lang: 0 for lang, _ in self.languages}
 
+        # Only check files in the root directory, excluding directories
         for file in os.listdir(directory):
             file_path = os.path.join(directory, file)
             
-            if not file.startswith(".") and os.path.isfile(file_path) and file_path not in self.exclude_dirs:
+            # Count only files, ignore directories
+            if os.path.isfile(file_path):
                 for lang, ext in self.languages:
                     if file.endswith(ext):
                         language_counts[lang] += 1
@@ -121,10 +122,7 @@ class ReadmeUpdater:
 if __name__ == "__main__":
     readme_path     = os.path.join(os.getenv('GITHUB_WORKSPACE', ''), 'README.md')
     repo_directory  = os.path.abspath(os.path.join(os.getcwd(), "../.."))
-    exclude_dirs    = [os.path.abspath(os.path.join(repo_directory, ".github")), 
-                       os.path.abspath(os.path.join(repo_directory, ".vscode"))]
-    
-    file_counter    = FileCounter(LANGUAGES, exclude_dirs)
+    file_counter    = FileCounter(LANGUAGES)
     md_formatter    = MarkdownFormatter()
     readme_updater  = ReadmeUpdater(readme_path, md_formatter, file_counter)
 
