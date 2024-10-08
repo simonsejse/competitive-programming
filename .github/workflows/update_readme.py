@@ -102,7 +102,8 @@ class ReadmeUpdater:
 
 
 if __name__ == "__main__":
-    readme_path = os.path.abspath(os.path.join(os.getcwd(), "../../README.md"))
+    readme_path = os.path.join(os.getenv('GITHUB_WORKSPACE', ''), 'README.md')
+
     repo_directory = os.path.abspath(os.path.join(os.getcwd(), "../.."))
     file_counter = FileCounter(LANGUAGES)
     html_formatter = HTMLFormatter()
