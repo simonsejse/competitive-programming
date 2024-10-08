@@ -125,5 +125,4 @@ if __name__ == "__main__":
     file_counter    = FileCounter(LANGUAGES)
     md_formatter    = MarkdownFormatter()
     readme_updater  = ReadmeUpdater(readme_path, md_formatter, file_counter)
-
     readme_updater.update_readme(repo_directory)
