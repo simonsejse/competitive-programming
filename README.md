@@ -51,7 +51,17 @@ To automate Kattis submissions and organize accepted files:
          "label": "Submit to Kattis",
          "type": "shell",
          "command": "python",
-         "args": ["${workspaceFolder}/scripts/submit_and_move.py", "${file}"]
+         "args": ["${workspaceFolder}/scripts/submit_and_move.py", "${file}"],
+         "presentation": {
+           "echo": true,
+           "reveal": "always",
+           "focus": true,
+           "panel": "shared",
+           "showReuseMessage": false,
+           "clear": false,
+           "close": true
+         },
+         "problemMatcher": []
        }
      ]
    }
@@ -91,6 +101,12 @@ Automate the creation of problem sets with specified language templates:
 
    - Ensure your script is in the `scripts` folder and can handle language options.
 
+Remember to change the `VSCODE_PATH` variable in the script to your own path:
+
+```python
+VSCODE_PATH = r"C:\Users\simon\AppData\Local\Programs\Microsoft VS Code\Code.exe" #Remember to change this to your own path
+```
+
 2. **Configure VSCode Tasks**:
    Add the following to your `.vscode/tasks.json`:
 
@@ -102,6 +118,15 @@ Automate the creation of problem sets with specified language templates:
          "label": "Create New Problem Set (py)",
          "type": "shell",
          "command": "python",
+         "presentation": {
+           "echo": true,
+           "reveal": "always",
+           "focus": true,
+           "panel": "shared",
+           "showReuseMessage": false,
+           "clear": false,
+           "close": true
+         },
          "args": [
            "${workspaceFolder}/scripts/create_problem_set.py",
            "-l",
@@ -112,6 +137,15 @@ Automate the creation of problem sets with specified language templates:
          "label": "Create New Problem Set (cpp)",
          "type": "shell",
          "command": "python",
+         "presentation": {
+           "echo": true,
+           "reveal": "always",
+           "focus": true,
+           "panel": "shared",
+           "showReuseMessage": false,
+           "clear": false,
+           "close": true
+         },
          "args": [
            "${workspaceFolder}/scripts/create_problem_set.py",
            "-l",
@@ -122,69 +156,21 @@ Automate the creation of problem sets with specified language templates:
    }
    ```
 
-## 🔧 Setup: Auto Create Problem Set
-
-Automate the creation of problem sets with specified language templates:
-
-### 🛠️ Steps
-
-1. **Add `create_problem_set.py`**:
-
-   - Ensure your script is in the `scripts` folder and can handle language options.
-
-2. **Configure VSCode Tasks**:
-   Add the following to your `.vscode/tasks.json`:
-
-   ```json
-   {
-     "version": "2.0.0",
-     "tasks": [
-       {
-         "label": "Create New Problem Set (py)",
-         "type": "shell",
-         "command": "python",
-         "args": ["${workspaceFolder}/scripts/create_problem_set.py -l py"],
-         "presentation": {
-           "echo": true,
-           "reveal": "always",
-           "focus": true,
-           "panel": "shared"
-         },
-         "problemMatcher": []
-       },
-       {
-         "label": "Create New Problem Set (cpp)",
-         "type": "shell",
-         "command": "python",
-         "args": ["${workspaceFolder}/scripts/create_problem_set.py -l cpp"],
-         "presentation": {
-           "echo": true,
-           "reveal": "always",
-           "focus": true,
-           "panel": "shared"
-         },
-         "problemMatcher": []
-       }
-     ]
-   }
-   ```
-
 3. Setup Keybindings: Add to keybindings.json:
 
 ```json
 [
   {
-    "key": "f9", // For Python
-
-    "command": "workbench.action.tasks.runTask",
-    "args": "Create New Problem Set (py)",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "f10", // For C++
+    "key": "f9", // For C++
     "command": "workbench.action.tasks.runTask",
     "args": "Create New Problem Set (cpp)",
-    "when": "editorTextFocus"
+    "when": "true"
+  },
+  {
+    "key": "f10", // For Python
+    "command": "workbench.action.tasks.runTask",
+    "args": "Create New Problem Set (py)",
+    "when": "true"
   }
 ]
 ```
