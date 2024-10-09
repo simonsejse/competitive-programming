@@ -82,7 +82,7 @@ class MarkdownFormatter:
 
         # Add each language count to the table
         for language, count in language_counts.items():
-            markdown += f"| {language} | {count - 1} |\n"
+            markdown += f"| {language} | {count} |\n"
 
         # Add total count row
         markdown += f"| **Total** | **{total_count - len(language_counts)}** |\n"
@@ -124,6 +124,8 @@ class ReadmeUpdater:
 if __name__ == "__main__":
     readme_path     = os.path.join(os.getenv('GITHUB_WORKSPACE', ''), 'README.md')
     repo_directory = os.getenv('GITHUB_WORKSPACE', os.getcwd())
+    repo_directory = os.path.join(repo_directory, 'solutions')
+
     file_counter    = FileCounter(LANGUAGES)
     md_formatter    = MarkdownFormatter()
     readme_updater  = ReadmeUpdater(readme_path, md_formatter, file_counter)
