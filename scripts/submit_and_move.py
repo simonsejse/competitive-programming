@@ -150,7 +150,7 @@ def main():
         sys.exit(1)
 
     # Construct the kattis-cli command
-    command = ["python", f"{KATTIS_CLI_PATH}/submit.py", solution_file]
+    command = ["python", f"{KATTIS_CLI_PATH}/submit.py", "-f", solution_file]
 
     # Read credentials from kattisrc
     credentials = read_kattis_credentials(KATTIS_RC_PATH)
