@@ -22,7 +22,6 @@
 - **`.github/workflows/`**: Contains automation scripts for CI/CD.
 - **`README.md`**: Contains project description and auto-generated stats.
 
-
 ## 🔧 Setup: Auto Submit and Move
 
 To automate Kattis submissions and organize accepted files:
@@ -33,6 +32,7 @@ To automate Kattis submissions and organize accepted files:
     - Python: [Download Python](https://www.python.org/downloads/)
     - Kattis CLI: [Kattis CLI](https://github.com/kattis/kattis-cli)
     - Python Packages: `pip install requests beautifulsoup4`
+    - Ensure you have a valid `.kattisrc` file in your home directory with your credentials. You can get it from [here](https://open.kattis.com/info/submit).
 
 2. **Add `submit_and_move.py`**:
    - The script is in [`scripts/submit_and_move.py`](https://github.com/simonsejse/competitive_programming/blob/main/scripts/submit_and_move.py).
@@ -75,7 +75,7 @@ To automate Kattis submissions and organize accepted files:
     Manually create the folder or the script will create it automatically.
 
 6. **Submit Solution**:
-    - Open the solution file, e.g., `kattisexercise.cpp`, press `F7`, and it will automatically upload the solution to Kattis and if accepted move the task into the solutions folder. 
+    - Keep unfinished solutions in the root directory. Open the solution file (e.g., `kattisexercise.cpp`), press `F7`, and it will automatically upload the solution to Kattis. If accepted, the script moves the file to the `solutions` folder.
 
 ### 📚 Resources
 
