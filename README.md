@@ -75,7 +75,7 @@ To automate Kattis submissions and organize accepted files:
     Manually create the folder or the script will create it automatically.
 
 6. **Submit Solution**:
-    - Open the solution file, e.g., `kattisexercise.cpp`, press `F7`, confirm submission with `y`.
+    - Open the solution file, e.g., `kattisexercise.cpp`, press `F7`, and it will automatically upload the solution to Kattis and if accepted move the task into the solutions folder. 
 
 ### 📚 Resources
 
