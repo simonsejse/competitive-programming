@@ -4,7 +4,6 @@
 #include <cmath>
 #include <map>
 using namespace std;
-
 #define rep(i, a, b) for (int i = a; i < (b); ++i)
 #define trav(a, x) for (auto& a : x)
 #define all(x) x.begin(), x.end()
