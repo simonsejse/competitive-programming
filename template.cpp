@@ -43,13 +43,26 @@ using namespace std;
 #define flr(x) floor(x)          // Shortcut for floor
 #define cl(x) ceil(x)            // Shortcut for ceil
 
-#define UNION(set1, set2, result)                                              \
-  std::set_union(set1.begin(), set1.end(), set2.begin(), set2.end(),           \
-                 std::inserter(result, result.begin()))
-                 
-#define INTERSECT(set1, set2, result)                                          \
-  std::set_intersection(set1.begin(), set1.end(), set2.begin(), set2.end(),    \
-                        std::inserter(result, result.begin()))
+template<typename T>
+std::set<T> U(const std::set<T>& a, const std::set<T>& b) {
+  std::set<T> result;
+  std::set_union(a.begin(), a.end(), b.begin(), b.end(), std::inserter(result, result.begin()));
+  return result;
+}
+
+template<typename T>
+std::set<T> I(const std::set<T>& a, const std::set<T>& b) {
+  std::set<T> result;
+  std::set_intersection(a.begin(), a.end(), b.begin(), b.end(), std::inserter(result, result.begin()));
+  return result;
+}
+
+template<typename T>
+std::set<T> D(const std::set<T>& a, const std::set<T>& b) {
+    std::set<T> result;
+    std::set_difference(a.begin(), a.end(), b.begin(), b.end(), std::inserter(result, result.begin()));
+    return result;
+}
 
 /* 4 PRINTS */
 template <class T>
