@@ -31,7 +31,6 @@ pair<int, int> get_wins(int dice_1[], int dice_2[]) {
 }
 
 int main() {
-
   int  xj;
   bool flag[3];
   int  d[3][6];
