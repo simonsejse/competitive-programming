@@ -87,6 +87,5 @@ int main(int argc, char* argv[]) {
   ll init_y = 2022;
 
   out(init_y + improv_since_frozen / improv_per_year);
-  
   return 0;
 }
