@@ -6,6 +6,7 @@
 #include <cstring>
 #include <ctime>
 #include <iostream>
+#include <list>
 #include <map>
 #include <queue>
 #include <set>
@@ -22,6 +23,7 @@ using namespace std;
 #define pii pair<int, int>
 #define pll pair<long long, long long>
 #define vi vector<int>
+#define vc vector<char>
 #define vll vector<long long>
 #define mii map<int, int>
 #define si set<int>
@@ -38,6 +40,7 @@ using namespace std;
 #define S second
 #define T(cond, a, b) ((cond) ? (a) : (b)) // Short ternary operator
 #define trav(a, x) for(auto& a : x)        // Iterate over elements of a container
+#define BOUND(lb, lb_op, var, up_op, up) ((lb) lb_op (var) && (var) up_op (up)) // Bound check
 
 /* 3. MATH SHORTCUTS */
 #define flr(x) floor(x)          // Shortcut for floor
@@ -64,7 +67,14 @@ std::set<T> D(const std::set<T>& a, const std::set<T>& b) {
     return result;
 }
 
-/* 4 PRINTS */
+/* 4 CONVERSIONS */
+template <typename U>
+auto toset(const U& v) -> std::set<typename U::value_type> {
+    return std::set<typename U::value_type>(v.begin(), v.end());
+}
+
+
+/* 5 PRINTS */
 template <class T>
 void out_v(vector<T> &v) { cout << "{"; for (auto x : v) cout << x << ","; cout << "\b}"; }
 #define out(s) cout << s << endl;
@@ -73,7 +83,7 @@ template<typename T>
 void out_s(set<T> &s) { cout << "{"; for (auto x : s) cout << x << ","; cout << "\b}"; }
 
 
-/* 4. UTILS */
+/* 6. UTILS */
 #define MOD 1000000007
 #define PI 3.1415926535897932384626433832795
 #define read(type) readInt<type>()
@@ -89,7 +99,7 @@ bool prime(ll a) { if (a==1) return 0; for (int i=2;i<=round(sqrt(a));++i) if (a
 void yes() { cout<<"YES\n"; }
 void no() { cout<<"NO\n"; }
 
-/*  5. All Required define Pre-Processors and typedef Constants */
+/*  7. All Required define Pre-Processors and typedef Constants */
 typedef long int int32;
 typedef unsigned long int uint32;
 typedef long long int int64;
