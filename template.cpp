@@ -17,7 +17,7 @@ using namespace std;
 
 /* clang-format off */
 
-/* TYPES  */
+/* 1. TYPES  */
 #define ll long long
 #define pii pair<int, int>
 #define pll pair<long long, long long>
@@ -27,7 +27,7 @@ using namespace std;
 #define si set<int>
 #define sc set<char>
 
-/* FUNCTIONS */
+/* 2. FUNCTIONS */
 #define f(i,s,e) for(long long int i=s;i<e;i++)
 #define cf(i,s,e) for(long long int i=s;i<=e;i++)
 #define rf(i,e,s) for(long long int i=e-1;i>=s;i--)
@@ -39,15 +39,28 @@ using namespace std;
 #define T(cond, a, b) ((cond) ? (a) : (b)) // Short ternary operator
 #define trav(a, x) for(auto& a : x)        // Iterate over elements of a container
 
-/* MATH SHORTCUTS */
+/* 3. MATH SHORTCUTS */
 #define flr(x) floor(x)          // Shortcut for floor
 #define cl(x) ceil(x)            // Shortcut for ceil
 
-/* PRINTS */
-template <class T>
-void print_v(vector<T> &v) { cout << "{"; for (auto x : v) cout << x << ","; cout << "\b}"; }
+#define UNION(set1, set2, result)                                              \
+  std::set_union(set1.begin(), set1.end(), set2.begin(), set2.end(),           \
+                 std::inserter(result, result.begin()))
+                 
+#define INTERSECT(set1, set2, result)                                          \
+  std::set_intersection(set1.begin(), set1.end(), set2.begin(), set2.end(),    \
+                        std::inserter(result, result.begin()))
 
-/* UTILS */
+/* 4 PRINTS */
+template <class T>
+void out_v(vector<T> &v) { cout << "{"; for (auto x : v) cout << x << ","; cout << "\b}"; }
+#define out(s) cout << s << endl;
+
+template<typename T>
+void out_s(set<T> &s) { cout << "{"; for (auto x : s) cout << x << ","; cout << "\b}"; }
+
+
+/* 4. UTILS */
 #define MOD 1000000007
 #define PI 3.1415926535897932384626433832795
 #define read(type) readInt<type>()
@@ -63,11 +76,12 @@ bool prime(ll a) { if (a==1) return 0; for (int i=2;i<=round(sqrt(a));++i) if (a
 void yes() { cout<<"YES\n"; }
 void no() { cout<<"NO\n"; }
 
-/*  All Required define Pre-Processors and typedef Constants */
+/*  5. All Required define Pre-Processors and typedef Constants */
 typedef long int int32;
 typedef unsigned long int uint32;
 typedef long long int int64;
 typedef unsigned long long int  uint64;
+typedef string str;
 
 /* clang-format on */
 #define ONLINE_JUDGE 1
