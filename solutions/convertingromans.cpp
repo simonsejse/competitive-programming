@@ -16,7 +16,6 @@ typedef vector<int>    vi;
 typedef vector<ll>     vl;
 
 int main() {
-
   ll n, sum, max, val;
   cin >> n;
   string         str;
