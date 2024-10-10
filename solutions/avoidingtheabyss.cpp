@@ -59,12 +59,9 @@ int main() {
   for (int i = 1; i >= 0; i--) {
     general_path[cnt++] = make_pair(t_path[i].first, t_path[i].second);
   }
-
   cout << cnt << endl;
-
   for (int i = 0; i < 6; i++) {
     cout << general_path[i].first << " " << general_path[i].second << endl;
   }
-
   return 0;
 }
