@@ -16,7 +16,6 @@ typedef vector<int>    vi;
 typedef vector<ll>     vl;
 
 int main() {
-
   int    stay_awake = 0, n = 0, cnt = 0;
   string bin;
   cin >> n;
@@ -34,8 +33,6 @@ int main() {
     cnt++;
     stay_awake--;
   }
-
   cout << cnt;
-
   return 0;
 }
