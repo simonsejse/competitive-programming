@@ -48,7 +48,6 @@ template <class T>
 void print_v(vector<T> &v) { cout << "{"; for (auto x : v) cout << x << ","; cout << "\b}"; }
 #define out(s) cout << s << endl;
 
-
 /* UTILS */
 #define MOD 1000000007
 #define PI 3.1415926535897932384626433832795
