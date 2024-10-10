@@ -23,8 +23,6 @@ while (m > 0):
             exit(0)
             break
         previous_m = m
-
-
 ret = f'{cnt:#b}'
 ret = ret.replace('0b', '')
 
