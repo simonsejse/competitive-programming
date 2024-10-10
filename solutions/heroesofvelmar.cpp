@@ -125,6 +125,5 @@ int main() {
       cout << "Tie" << endl;
     }
   }
-
   return 0;
 }
