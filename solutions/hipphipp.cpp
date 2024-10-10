@@ -12,7 +12,6 @@
 #include <stack>
 #include <string>
 #include <vector>
-
 using namespace std;
 
 /* clang-format off */
