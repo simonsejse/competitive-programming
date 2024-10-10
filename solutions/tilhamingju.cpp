@@ -73,6 +73,7 @@ typedef long long int int64;
 typedef unsigned long long int  uint64;
 
 /* clang-format on */
+
 #define ONLINE_JUDGE 1
 
 int main(int argc, char* argv[]) {
