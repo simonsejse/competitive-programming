@@ -14,7 +14,7 @@ def main():
     args = parser.parse_args()
 
     problem_name = input("Enter the name of the new problem set: ")
-    template_file = f"template.{args.language}"  # Use the specified language extension
+    template_file = f"templates/template.{args.language}"  # Use the specified language extension
     destination_file = f"{problem_name}.{args.language}"  # Create the new file with the correct extension
 
     if os.path.exists(destination_file):
