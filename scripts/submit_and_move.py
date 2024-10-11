@@ -49,14 +49,25 @@ def read_kattis_credentials(kattisrc_path):
         'hostname': hostname
     }
 
+
 def login_with_config(credentials):
     """Login to Kattis using the provided credentials."""
+    cookies_file = 'cookies.pkl'
+    
+    # Check if cookies file exists
+    if os.path.exists(cookies_file):
+        with open(cookies_file, 'rb') as f:
+            return pickle.load(f)
+
     login_args = {'user': credentials['username'], 'token': credentials['token'], 'script': 'true'}
     headers = {'User-Agent': 'kattis-cli-submit'}
     response = requests.post(credentials['login_url'], data=login_args, headers=headers)
 
     if response.status_code == 200:
         print("Login successful.")
+        # Save cookies to file using pickle
+        with open(cookies_file, 'wb') as f:
+            pickle.dump(response.cookies, f)
         return response.cookies  # Return session cookies after successful login
     else:
         print(f"Login failed with status code: {response.status_code}")
