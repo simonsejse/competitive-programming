@@ -6,12 +6,15 @@
 #include <cstring>
 #include <ctime>
 #include <iostream>
+#include <iterator>
 #include <list>
 #include <map>
 #include <queue>
 #include <set>
 #include <stack>
 #include <string>
+#include <type_traits>
+#include <utility>
 #include <vector>
 
 using namespace std;
@@ -30,8 +33,10 @@ using namespace std;
 #define sc set<char>
 
 /* 2. FUNCTIONS */
+void read() {}
+template <typename T, typename... Args>
+void read(T& first, Args&... args) { std::cin >> first; read(args...); }
 #define f(i,s,e) for(long long int i=s;i<e;i++)
-#define fr(i,e,s) for(long long int i=e-1;i>=s;i--)
 #define fop(s,i,op,e, inc) for(long long int i = s;i op e;i inc)
 #define pb push_back
 #define eb emplace_back
@@ -39,7 +44,7 @@ using namespace std;
 #define F first
 #define S second
 #define T(cond, a, b) ((cond) ? (a) : (b)) // Short ternary operator
-#define trav(a, x) for(auto& a : x)        // Iterate over elements of a container
+#define EACH(a, x) for(auto& a : x)        // Iterate over elements of a container
 #define BOUND(lb, lb_op, var, up_op, up) ((lb) lb_op (var) && (var) up_op (up)) // Bound check
 
 /* 3. MATH SHORTCUTS */
@@ -75,18 +80,35 @@ auto toset(const U& v) -> std::set<typename U::value_type> {
 
 
 /* 5 PRINTS */
-template <class T>
-void out_v(vector<T> &v) { cout << "{"; for (auto x : v) cout << x << ","; cout << "\b}"; }
-#define out(s) cout << s << endl;
-
-template<typename T>
-void out_s(set<T> &s) { cout << "{"; for (auto x : s) cout << x << ","; cout << "\b}"; }
-
-
+// Type trait to check if a type is a container (has begin() and end())
+template <typename T, typename = void> struct is_container : std::false_type {};
+template <typename T>
+struct is_container<
+    T, typename std::enable_if<
+           !std::is_same<T, std::string>::value && // Exclude std::string
+           !std::is_same<T, const char*>::value && // Exclude C-style strings
+           std::is_same<decltype(std::begin(std::declval<T&>())),
+                        decltype(std::end(std::declval<T&>()))>::value>::type>
+    : std::true_type {};
+// Base case: types that are not containers or strings
+template <typename T>
+typename std::enable_if<!is_container<T>::value &&
+                        !std::is_same<T, std::string>::value>::type
+print(const T& x) {std::cout << x;}
+// Overload for strings and C-style strings
+void print(const std::string& s) { std::cout << s; }
+void print(const char* s) { std::cout << s; }
+// Overload for pairs
+template <typename T1, typename T2> void print(const std::pair<T1, T2>& p) { std::cout << "(";print(p.first); std::cout << ", "; print(p.second);std::cout << ")";}
+// Overload for containers
+template <typename T>
+typename std::enable_if<is_container<T>::value>::type print(const T& container) { std::cout << "[";bool first = true;for (const auto& element : container) {if (!first) std::cout << ", "; print(element); first = false; } std::cout << "]"; }
+template <typename T, typename... Args>
+void print(const T& first, const Args&... args) { print(first); print(args...); }
 /* 6. UTILS */
 #define MOD 1000000007
 #define PI 3.1415926535897932384626433832795
-#define read(type) readInt<type>()
+#define NL "\n"
 ll min(ll a,int b) { if (a<b) return a; return b; }
 ll min(int a,ll b) { if (a<b) return a; return b; }
 ll max(ll a,int b) { if (a>b) return a; return b; }
@@ -115,7 +137,8 @@ int main(int argc, char* argv[]) {
   freopen("input.txt", "r", stdin);   // input.txt
   freopen("output.txt", "w", stdout); // output.txt
 #endif
-  ll N, P;
-  cin >> N >> P;
+  ll a, b, c;
+  read(a, b, c);
+  print(a, NL, b, NL, c, NL);
   return 0;
 }
