@@ -46,6 +46,7 @@ void read(T& first, Args&... args) { std::cin >> first; read(args...); }
 #define T(cond, a, b) ((cond) ? (a) : (b)) // Short ternary operator
 #define EACH(a, x) for(auto& a : x)        // Iterate over elements of a container
 #define BOUND(lb, lb_op, var, up_op, up) ((lb) lb_op (var) && (var) up_op (up)) // Bound check
+#define IF(cond, true_expr, false_expr) do { if (cond) { true_expr; } else { false_expr; } } while(0)
 
 /* 3. MATH SHORTCUTS */
 #define flr(x) floor(x)          // Shortcut for floor
