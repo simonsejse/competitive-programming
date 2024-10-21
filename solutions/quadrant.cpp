@@ -30,7 +30,6 @@ using namespace std;
 #define vc vector<char>
 #define vs vector<string>
 #define vll vector<long long>
-#define vpsi vector<pair<string, int>>
 #define mii map<int, int>
 #define si set<int>
 #define sc set<char>
@@ -46,37 +45,12 @@ void read(T& first, Args&... args) { std::cin >> first; read(args...); }
 #define mp make_pair
 #define F first
 #define S second
-#define B begin()
-#define E end()
 #define T(cond, a, b) ((cond) ? (a) : (b)) // Short ternary operator
 #define EACH(a, x) for(auto& a : x)        // Iterate over elements of a container
 #define BOUND(lb, lb_op, var, up_op, up) ((lb) lb_op (var) && (var) up_op (up)) // Bound check
 #define IF(cond, true_expr, false_expr) do { if (cond) { true_expr; } else { false_expr; } } while(0)
 
 /* 3. MATH SHORTCUTS */
-#if __cplusplus < 202002L
-struct identity {
-    template <typename T>
-    constexpr T&& operator()(T&& t) const noexcept {
-        return std::forward<T>(t);
-    }
-};
-#endif
-template <typename Iterator, typename Func = identity>
-auto argmin(Iterator begin, Iterator end, Func func = {}) {
-    auto it = std::min_element(begin, end, [&](const auto& a, const auto& b) {
-        return func(a) < func(b);
-    });
-    return std::distance(begin, it);
-}
-template <typename Iterator, typename Func = identity>
-auto argmax(Iterator begin, Iterator end, Func func = {}) {
-    auto it = std::max_element(begin, end, [&](const auto& a, const auto& b) {
-        return func(a) < func(b);
-    });
-    return std::distance(begin, it);
-}
-
 #define flr(x) floor(x)          // Shortcut for floor
 #define cl(x) ceil(x)            // Shortcut for ceil
 
@@ -107,6 +81,7 @@ auto toset(const U& v) -> std::set<typename U::value_type> {
     return std::set<typename U::value_type>(v.begin(), v.end());
 }
 
+
 /* 5 PRINTS */
 // Type trait to check if a type is a container (has begin() and end())
 template <typename T, typename = void> struct is_container : std::false_type {};
@@ -133,7 +108,6 @@ template <typename T>
 typename std::enable_if<is_container<T>::value>::type print(const T& container) { std::cout << "[";bool first = true;for (const auto& element : container) {if (!first) std::cout << ", "; print(element); first = false; } std::cout << "]"; }
 template <typename T, typename... Args>
 void print(const T& first, const Args&... args) { print(first); print(args...); }
-
 /* 6. UTILS */
 #define MOD 1000000007
 #define PI 3.1415926535897932384626433832795
@@ -160,14 +134,23 @@ typedef string str;
 /* clang-format on */
 #define ONLINE_JUDGE 1
 
+map<pii, int> xy_to_quadrant = {
+    {{1, 1}, 1},
+    {{-1, 1}, 2},
+    {{-1, -1}, 3},
+    {{1, -1}, 4},
+};
+
 int main(int argc, char* argv[]) {
   ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
 #ifndef ONLINE_JUDGE
   freopen("input.txt", "r", stdin);   // input.txt
   freopen("output.txt", "w", stdout); // output.txt
 #endif
-  ll a;
-  read(a);
-  print(a, NL);
+  ll x, y;
+  read(x, y);
+  x /= abs(x);
+  y /= abs(y);
+  print(xy_to_quadrant[{x, y}]);
   return 0;
 }

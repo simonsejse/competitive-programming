@@ -62,6 +62,7 @@ struct identity {
     }
 };
 #endif
+
 template <typename Iterator, typename Func = identity>
 auto argmin(Iterator begin, Iterator end, Func func = {}) {
     auto it = std::min_element(begin, end, [&](const auto& a, const auto& b) {
@@ -166,8 +167,15 @@ int main(int argc, char* argv[]) {
   freopen("input.txt", "r", stdin);   // input.txt
   freopen("output.txt", "w", stdout); // output.txt
 #endif
-  ll a;
-  read(a);
-  print(a, NL);
+  double m, n;
+  read(m, n);
+  double cnt = 0;
+  f(i, 0, n) {
+    str lane;
+    read(lane);
+    EACH(c, lane) cnt += c == '.';
+  }
+
+  print(cnt / (m * n));
   return 0;
 }

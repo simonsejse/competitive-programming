@@ -29,8 +29,8 @@ using namespace std;
 #define vi vector<int>
 #define vc vector<char>
 #define vs vector<string>
-#define vll vector<long long>
 #define vpsi vector<pair<string, int>>
+#define vll vector<long long>
 #define mii map<int, int>
 #define si set<int>
 #define sc set<char>
@@ -54,14 +54,12 @@ void read(T& first, Args&... args) { std::cin >> first; read(args...); }
 #define IF(cond, true_expr, false_expr) do { if (cond) { true_expr; } else { false_expr; } } while(0)
 
 /* 3. MATH SHORTCUTS */
-#if __cplusplus < 202002L
 struct identity {
     template <typename T>
     constexpr T&& operator()(T&& t) const noexcept {
         return std::forward<T>(t);
     }
 };
-#endif
 template <typename Iterator, typename Func = identity>
 auto argmin(Iterator begin, Iterator end, Func func = {}) {
     auto it = std::min_element(begin, end, [&](const auto& a, const auto& b) {
@@ -107,6 +105,7 @@ auto toset(const U& v) -> std::set<typename U::value_type> {
     return std::set<typename U::value_type>(v.begin(), v.end());
 }
 
+
 /* 5 PRINTS */
 // Type trait to check if a type is a container (has begin() and end())
 template <typename T, typename = void> struct is_container : std::false_type {};
@@ -133,7 +132,6 @@ template <typename T>
 typename std::enable_if<is_container<T>::value>::type print(const T& container) { std::cout << "[";bool first = true;for (const auto& element : container) {if (!first) std::cout << ", "; print(element); first = false; } std::cout << "]"; }
 template <typename T, typename... Args>
 void print(const T& first, const Args&... args) { print(first); print(args...); }
-
 /* 6. UTILS */
 #define MOD 1000000007
 #define PI 3.1415926535897932384626433832795
@@ -166,8 +164,17 @@ int main(int argc, char* argv[]) {
   freopen("input.txt", "r", stdin);   // input.txt
   freopen("output.txt", "w", stdout); // output.txt
 #endif
-  ll a;
-  read(a);
-  print(a, NL);
+  ll n;
+  read(n);
+  vpsi v;
+
+  f(i, 0, n) {
+    str nm;
+    ll  fun;
+    read(nm, fun);
+    v.pb({nm, fun});
+  }
+  int idx = argmax(v.B, v.E, [](auto x) { return x.S; });
+  print(v[idx].F, NL);
   return 0;
 }

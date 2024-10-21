@@ -166,8 +166,10 @@ int main(int argc, char* argv[]) {
   freopen("input.txt", "r", stdin);   // input.txt
   freopen("output.txt", "w", stdout); // output.txt
 #endif
-  ll a;
-  read(a);
-  print(a, NL);
+  ll xr, yr, xp, yp, cnt = 0;
+  read(xr, yr, xp, yp);
+  cnt += xr != xp;
+  cnt += yr != yp;
+  print(cnt, NL);
   return 0;
 }

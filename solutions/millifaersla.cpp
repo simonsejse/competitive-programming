@@ -30,7 +30,6 @@ using namespace std;
 #define vc vector<char>
 #define vs vector<string>
 #define vll vector<long long>
-#define vpsi vector<pair<string, int>>
 #define mii map<int, int>
 #define si set<int>
 #define sc set<char>
@@ -46,39 +45,24 @@ void read(T& first, Args&... args) { std::cin >> first; read(args...); }
 #define mp make_pair
 #define F first
 #define S second
-#define B begin()
-#define E end()
 #define T(cond, a, b) ((cond) ? (a) : (b)) // Short ternary operator
 #define EACH(a, x) for(auto& a : x)        // Iterate over elements of a container
 #define BOUND(lb, lb_op, var, up_op, up) ((lb) lb_op (var) && (var) up_op (up)) // Bound check
 #define IF(cond, true_expr, false_expr) do { if (cond) { true_expr; } else { false_expr; } } while(0)
 
 /* 3. MATH SHORTCUTS */
-#if __cplusplus < 202002L
-struct identity {
-    template <typename T>
-    constexpr T&& operator()(T&& t) const noexcept {
-        return std::forward<T>(t);
-    }
-};
-#endif
-template <typename Iterator, typename Func = identity>
-auto argmin(Iterator begin, Iterator end, Func func = {}) {
-    auto it = std::min_element(begin, end, [&](const auto& a, const auto& b) {
-        return func(a) < func(b);
-    });
-    return std::distance(begin, it);
-}
-template <typename Iterator, typename Func = identity>
-auto argmax(Iterator begin, Iterator end, Func func = {}) {
-    auto it = std::max_element(begin, end, [&](const auto& a, const auto& b) {
-        return func(a) < func(b);
-    });
-    return std::distance(begin, it);
-}
-
 #define flr(x) floor(x)          // Shortcut for floor
 #define cl(x) ceil(x)            // Shortcut for ceil
+template <typename T>
+int argmin(std::initializer_list<T> args) {
+    auto it = std::min_element(args.begin(), args.end()); 
+    return std::distance(args.begin(), it); 
+}
+template <typename T>
+int argmax(std::initializer_list<T> args) {
+    auto it = std::max_element(args.begin(), args.end()); 
+    return std::distance(args.begin(), it); 
+}
 
 template<typename T>
 std::set<T> U(const std::set<T>& a, const std::set<T>& b) {
@@ -106,6 +90,7 @@ template <typename U>
 auto toset(const U& v) -> std::set<typename U::value_type> {
     return std::set<typename U::value_type>(v.begin(), v.end());
 }
+
 
 /* 5 PRINTS */
 // Type trait to check if a type is a container (has begin() and end())
@@ -150,6 +135,7 @@ bool prime(ll a) { if (a==1) return 0; for (int i=2;i<=round(sqrt(a));++i) if (a
 void yes() { cout<<"YES\n"; }
 void no() { cout<<"NO\n"; }
 
+
 /*  7. All Required define Pre-Processors and typedef Constants */
 typedef long int int32;
 typedef unsigned long int uint32;
@@ -166,8 +152,17 @@ int main(int argc, char* argv[]) {
   freopen("input.txt", "r", stdin);   // input.txt
   freopen("output.txt", "w", stdout); // output.txt
 #endif
-  ll a;
-  read(a);
-  print(a, NL);
+  ll a, b, c;
+  read(a, b, c);
+
+  int idx = argmin({a, b, c});
+
+  if (idx == 0) {
+    print("Monnei", NL);
+  } else if (idx == 1) {
+    print("Fjee", NL);
+  } else {
+    print("Dolladollabilljoll", NL);
+  }
   return 0;
 }
