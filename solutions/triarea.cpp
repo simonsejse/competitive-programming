@@ -63,7 +63,10 @@ struct identity {
     }
 };
 #endif
+<<<<<<<< HEAD:solutions/triarea.cpp
 
+========
+>>>>>>>> origin/main:templates/template.cpp
 template <typename Iterator, typename Func = identity>
 auto argmin(Iterator begin, Iterator end, Func func = {}) {
     auto it = std::min_element(begin, end, [&](const auto& a, const auto& b) {
