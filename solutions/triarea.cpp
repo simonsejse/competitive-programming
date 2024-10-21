@@ -5,6 +5,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
+#include <functional>
 #include <iomanip>
 #include <iostream>
 #include <iterator>
@@ -62,6 +63,7 @@ struct identity {
     }
 };
 #endif
+
 template <typename Iterator, typename Func = identity>
 auto argmin(Iterator begin, Iterator end, Func func = {}) {
     auto it = std::min_element(begin, end, [&](const auto& a, const auto& b) {
@@ -166,8 +168,10 @@ int main(int argc, char* argv[]) {
   freopen("input.txt", "r", stdin);   // input.txt
   freopen("output.txt", "w", stdout); // output.txt
 #endif
-  ll a;
-  read(a);
-  print(a, NL);
+  ll h, b;
+  read(h, b);
+
+  print(static_cast<double>(h * b) / 2);
+
   return 0;
 }
