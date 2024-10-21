@@ -6,6 +6,7 @@ import os
 import time
 import sys
 import shutil 
+import pickle
 
 # Constants
 POLL_INTERVAL = 5 
@@ -54,10 +55,13 @@ def login_with_config(credentials):
     """Login to Kattis using the provided credentials."""
     cookies_file = 'cookies.pkl'
     
-    # Check if cookies file exists
     if os.path.exists(cookies_file):
-        with open(cookies_file, 'rb') as f:
-            return pickle.load(f)
+        try:
+            with open(cookies_file, 'rb') as f:
+                cookies = pickle.load(f)
+                return cookies
+        except (EOFError, pickle.UnpicklingError):
+            print("Cookies file is empty or corrupted. Reattempting login...")
 
     login_args = {'user': credentials['username'], 'token': credentials['token'], 'script': 'true'}
     headers = {'User-Agent': 'kattis-cli-submit'}
