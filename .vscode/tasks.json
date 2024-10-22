@@ -1,0 +1,62 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Submit to Kattis",
+            "type": "shell",
+            "command": "python",
+            "args": [
+                "${workspaceFolder}/scripts/submit_and_move.py",
+                "${file}"
+            ],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false,
+                "close": true
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Create New Problem Set (py)",
+            "type": "shell",
+            "command": "python",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false,
+                "close": true 
+            },
+            "args": [
+                "${workspaceFolder}/scripts/create_problem_set.py",
+                "-l",
+                "py"
+            ]
+        },
+        {
+            "label": "Create New Problem Set (cpp)",
+            "type": "shell",
+            "command": "python",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "shared",
+                "showReuseMessage": false,
+                "clear": false,
+                "close": true
+            },
+            "args": [
+                "${workspaceFolder}/scripts/create_problem_set.py",
+                "-l",
+                "cpp"
+            ]
+        }
+    ],
+}

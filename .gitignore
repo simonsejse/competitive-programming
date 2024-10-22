@@ -1,6 +1,5 @@
 .cph/
 .clang-format
-.vscode
 *.exe 
 *.out
 *.o
@@ -9,3 +8,4 @@
 .kattisrc
 cookies.pkl
 .notes
+progression
