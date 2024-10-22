@@ -3,6 +3,9 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import re
+from datetime import datetime, timedelta
+
+CACHE_EXPIRY_DAYS = 60 
 
 file_whitelist = {'bnn_accuracy.py', 'testing_tool.py', 'unununion_find.py'}
 image_src = 'https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/' # hey this a credit!
@@ -22,6 +25,9 @@ image_mapper = {
 
 get_image = lambda e,s=24: f'{image_src}{image_mapper[e]}/{image_mapper[e]}_{s}x{s}.png'
 
+def get_current_date():
+    return datetime.now().strftime('%Y-%m-%d')
+
 def load_cached_difficulties(cache_file='difficulty_cache.json'):
     if os.path.exists(cache_file):
         with open(cache_file, 'r') as f:
@@ -35,11 +41,16 @@ def save_cached_difficulties(cache, cache_file='difficulty_cache.json'):
 def get_problem_difficulty(pid, cache):
     # If the difficulty is cached, return it
     if pid in cache:
-        return cache[pid]
+        last_updated = cache[pid].get('last_updated')
+        if last_updated:
+            last_updated_date = datetime.strptime(last_updated, '%Y-%m-%d')
+            if (datetime.now() - last_updated_date).days <= CACHE_EXPIRY_DAYS:
+                return cache[pid]['difficulty'] 
     
     # Otherwise, request the difficulty from the Kattis website
     url = f"https://open.kattis.com/problems/{pid}"
     response = requests.get(url)
+
     if response.status_code == 200:
         # Parse the page using BeautifulSoup
         soup = BeautifulSoup(response.text, 'html.parser')
@@ -48,7 +59,10 @@ def get_problem_difficulty(pid, cache):
         if difficulty_span:
             difficulty = difficulty_span.text.strip()
             # Cache the result before returning it
-            cache[pid] = difficulty
+            cache[pid] = {
+                'difficulty': difficulty,
+                'last_updated': get_current_date()
+            }
             return difficulty
     return "N/A"
 
