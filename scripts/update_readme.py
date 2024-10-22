@@ -88,7 +88,7 @@ for file in sorted(os.listdir('solutions')):
             image_icon = f"[![{ext}]({get_image(ext)})]({file_path})" if file not in file_whitelist else ""
             
             # Append the formatted line to contents, including difficulty
-            contents.append([pid, f"|[{file}]({file})| [{pid}]({kattis_url}) | {difficulty} | {image_icon}|\n"])
+            contents.append([pid, f"|[{file}]({repo_url})| [{pid}]({kattis_url}) | {difficulty} | {image_icon}|\n"])
 
 # Save the updated difficulties cache
 save_cached_difficulties(difficulty_cache)
