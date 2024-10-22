@@ -136,7 +136,7 @@ To automate Kattis submissions and organize accepted files:
    ```json
    [
      {
-       "key": "f12",
+       "key": "numpad0",
        "command": "workbench.action.tasks.runTask",
        "args": "Submit to Kattis",
        "when": "editorTextFocus"
@@ -148,7 +148,7 @@ To automate Kattis submissions and organize accepted files:
    Manually create the folder or the script will create it automatically.
 
 6. **Submit Solution**:
-   - Keep unfinished solutions in the root directory. Open the solution file (e.g., `kattisexercise.cpp`), press `F7`, and it will automatically upload the solution to Kattis. If accepted, the script moves the file to the `solutions` folder.
+   - Keep unfinished solutions in the root directory. Open the solution file (e.g., `kattisexercise.cpp`), press `numpad0`, and it will automatically upload the solution to Kattis. If accepted, the script moves the file to the `solutions` folder.
 
 ### 📚 Resources
 
