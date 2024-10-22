@@ -5,17 +5,20 @@
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
+#include <iomanip>
 #include <iostream>
+#include <iterator>
+#include <list>
 #include <map>
 #include <queue>
 #include <set>
 #include <stack>
 #include <string>
+#include <type_traits>
+#include <utility>
 #include <vector>
 
 using namespace std;
-
-/* clang-format off */
 
 #pragma region Core Library
 
@@ -159,8 +162,13 @@ typedef string str;
 #pragma endregion
 
 /* clang-format on */
-
 #define ONLINE_JUDGE 1
+
+const ll total_piece_amount[] = {1, 1, 2, 2, 2, 8};
+
+ll pieces_needed(ll amount, ll index) {
+  return total_piece_amount[index] - amount;
+}
 
 int main(int argc, char* argv[]) {
   ios_base::sync_with_stdio(0), cin.tie(0), cout.tie(0);
@@ -168,6 +176,12 @@ int main(int argc, char* argv[]) {
   freopen("input.txt", "r", stdin);   // input.txt
   freopen("output.txt", "w", stdout); // output.txt
 #endif
-  print("TIL HAMINGJU MED AFMAELID FORRITUNARKEPPNI FRAMHALDSSKOLANNA!");
+  ll ki, q, r, b, kn, p;
+  read(ki, q, r, b, kn, p);
+
+  ll pieces[] = {ki, q, r, b, kn, p};
+
+  f(i, 0, 6) { print(pieces_needed(pieces[i], i), " "); }
+
   return 0;
 }

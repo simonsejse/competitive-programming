@@ -5,17 +5,20 @@
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
+#include <iomanip>
 #include <iostream>
+#include <iterator>
+#include <list>
 #include <map>
 #include <queue>
 #include <set>
 #include <stack>
 #include <string>
+#include <type_traits>
+#include <utility>
 #include <vector>
 
 using namespace std;
-
-/* clang-format off */
 
 #pragma region Core Library
 
@@ -159,7 +162,6 @@ typedef string str;
 #pragma endregion
 
 /* clang-format on */
-
 #define ONLINE_JUDGE 1
 
 int main(int argc, char* argv[]) {
@@ -168,6 +170,14 @@ int main(int argc, char* argv[]) {
   freopen("input.txt", "r", stdin);   // input.txt
   freopen("output.txt", "w", stdout); // output.txt
 #endif
-  print("TIL HAMINGJU MED AFMAELID FORRITUNARKEPPNI FRAMHALDSSKOLANNA!");
+  ll n, y, sum = 0;
+  read(n, y);
+  f(i, 0, n) {
+    ll t;
+    read(t);
+    sum += t;
+  }
+  IF(y < sum, print("Neibb"), print("Jebb"));
+
   return 0;
 }

@@ -5,17 +5,20 @@
 #include <cstdlib>
 #include <cstring>
 #include <ctime>
+#include <iomanip>
 #include <iostream>
+#include <iterator>
+#include <list>
 #include <map>
 #include <queue>
 #include <set>
 #include <stack>
 #include <string>
+#include <type_traits>
+#include <utility>
 #include <vector>
 
 using namespace std;
-
-/* clang-format off */
 
 #pragma region Core Library
 
@@ -35,6 +38,8 @@ using namespace std;
 #define sc set<char>
 
 /* 2. FUNCTIONS */
+#define ll_read(...) ll __VA_ARGS__; read(__VA_ARGS__)
+#define str_read(...) string __VA_ARGS__; read(__VA_ARGS__)
 void read() {}
 template <typename T, typename... Args>
 void read(T& first, Args&... args) { std::cin >> first; read(args...); }
@@ -159,7 +164,6 @@ typedef string str;
 #pragma endregion
 
 /* clang-format on */
-
 #define ONLINE_JUDGE 1
 
 int main(int argc, char* argv[]) {
@@ -168,6 +172,20 @@ int main(int argc, char* argv[]) {
   freopen("input.txt", "r", stdin);   // input.txt
   freopen("output.txt", "w", stdout); // output.txt
 #endif
-  print("TIL HAMINGJU MED AFMAELID FORRITUNARKEPPNI FRAMHALDSSKOLANNA!");
+  str_read(s);
+  ll   ok        = 0;
+  char prev_char = s[0];
+  if (s.length() < 2) {
+    print("no hiss", NL);
+    return 0;
+  }
+
+  f(i, 0, s.length() - 1) { ok |= (s[i] == 's' && s[i + 1] == 's'); }
+  if (ok) {
+    cout << "hiss\n";
+  } else {
+    cout << "no hiss\n";
+  }
+
   return 0;
 }
