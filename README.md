@@ -3,7 +3,7 @@
 <!-- START_TABLE_OF_CONTENTS -->
 ## Table of Contents
 - [🔗 Kattis Profile](#-kattis-profile)
-- [Total problems solved: 66](#total-problems-solved-66)
+- [Total problems solved: 67](#total-problems-solved-67)
 - [📂 Directory Structure](#-directory-structure)
 - [🔧 Setup: Auto Submit and Move](#-setup-auto-submit-and-move)
 - [🔧 Setup: Auto-Create Problem Set](#-setup-auto-create-problem-set)
@@ -20,7 +20,7 @@
 - **Auto-updated Statistics**:
 
 <!-- START_SOLVED_STATS -->
-## Total problems solved: 66
+## Total problems solved: 67
 
 Note that the table below is auto-generated. There might be slight inaccuracies.
 
@@ -42,6 +42,7 @@ Note that the table below is auto-generated. There might be slight inaccuracies.
 |[convertingromans.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/convertingromans.cpp)| [convertingromans](https://open.kattis.com/problems/convertingromans) | 3.8 | [![cpp](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/cpp/cpp_24x24.png)](solutions/convertingromans.cpp)|
 |[dagatal.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/dagatal.cpp)| [dagatal](https://open.kattis.com/problems/dagatal) | 1.3 | [![cpp](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/cpp/cpp_24x24.png)](solutions/dagatal.cpp)|
 |[decimaldeletion.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/decimaldeletion.cpp)| [decimaldeletion](https://open.kattis.com/problems/decimaldeletion) | 1.3 | [![cpp](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/cpp/cpp_24x24.png)](solutions/decimaldeletion.cpp)|
+|[dicecup.py](https://github.com/simonsejse/competitive-programming/tree/main/solutions/dicecup.py)| [dicecup](https://open.kattis.com/problems/dicecup) | 1.4 | [![py](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/python/python_24x24.png)](solutions/dicecup.py)|
 |[diehard.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/diehard.cpp)| [diehard](https://open.kattis.com/problems/diehard) | 3.1 | [![cpp](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/cpp/cpp_24x24.png)](solutions/diehard.cpp)|
 |[digitswap.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/digitswap.cpp)| [digitswap](https://open.kattis.com/problems/digitswap) | 1.2 | [![cpp](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/cpp/cpp_24x24.png)](solutions/digitswap.cpp)|
 |[dragafra.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/dragafra.cpp)| [dragafra](https://open.kattis.com/problems/dragafra) | 1.1 | [![cpp](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/cpp/cpp_24x24.png)](solutions/dragafra.cpp)|
