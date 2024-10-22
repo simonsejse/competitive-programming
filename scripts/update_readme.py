@@ -112,12 +112,13 @@ with open('README.md', 'w', encoding='utf8') as f:
 
 ########################### THIS IS FOR TABLE OF CONTENTS ###########################
 
-# Function to generate a slug from a heading
 def generate_slug(heading):
-    # Remove '##' and strip whitespace
+    # Remove '##', strip whitespace, and remove special characters (emojis, etc.)
     heading = heading.replace('##', '').strip()
+    # Remove any non-alphanumeric characters except spaces
+    heading = re.sub(r'[^a-zA-Z0-9 ]+', '', heading)
     # Replace spaces with hyphens and make lowercase
-    return heading.lower().replace(' ', '-').replace(':', '')
+    return heading.lower().replace(' ', '-')
 
 # Function to create the table of contents based on ## headings
 def generate_table_of_contents(lines):
