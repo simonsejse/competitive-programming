@@ -1,7 +1,14 @@
 # 🌟 Competitive Programming Repository
 
 <!-- START_TABLE_OF_CONTENTS -->
-
+## Table of Contents
+- [🔗 [Kattis Profile](https://open.kattis.com/users/simon-winther-albertsen)](#🔗-[kattis-profile](https//open.kattis.com/users/simon-winther-albertsen))
+- [Total problems solved: 53](#total-problems-solved-53)
+- [📂 Directory Structure](#📂-directory-structure)
+- [🔧 Setup: Auto Submit and Move](#🔧-setup-auto-submit-and-move)
+- [🔧 Setup: Auto-Create Problem Set](#🔧-setup-auto-create-problem-set)
+- [🔧 Setup: Folding for Template Files](#🔧-setup-folding-for-template-files)
+- [Setup: Auto CPH Judge with Competitive Companion](#setup-auto-cph-judge-with-competitive-companion)
 <!-- END_TABLE_OF_CONTENTS -->
 
 ## 🔗 [Kattis Profile](https://open.kattis.com/users/simon-winther-albertsen)
@@ -11,7 +18,6 @@
 - **Auto-updated Statistics**:
 
 <!-- START_SOLVED_STATS -->
-
 ## Total problems solved: 53
 
 Note that the table below is auto-generated. There might be slight inaccuracies.
