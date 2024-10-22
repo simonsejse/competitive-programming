@@ -66,7 +66,6 @@ def get_problem_difficulty(pid, cache):
             return difficulty
     return "N/A"
 
-# Load the cached difficulties
 difficulty_cache = load_cached_difficulties()
 
 contents = []
