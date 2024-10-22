@@ -3,7 +3,7 @@
 <!-- START_TABLE_OF_CONTENTS -->
 ## Table of Contents
 - [🔗 Kattis Profile](#-kattis-profile)
-- [Total problems solved: 53](#total-problems-solved-53)
+- [Total problems solved: 54](#total-problems-solved-54)
 - [📂 Directory Structure](#-directory-structure)
 - [🔧 Setup: Auto Submit and Move](#-setup-auto-submit-and-move)
 - [🔧 Setup: Auto-Create Problem Set](#-setup-auto-create-problem-set)
@@ -20,7 +20,7 @@
 - **Auto-updated Statistics**:
 
 <!-- START_SOLVED_STATS -->
-## Total problems solved: 53
+## Total problems solved: 54
 
 Note that the table below is auto-generated. There might be slight inaccuracies.
 
@@ -72,6 +72,7 @@ Note that the table below is auto-generated. There might be slight inaccuracies.
 |[takkar.cpp](https://open.kattis.com/problems/takkar)| takkar | 1.1 - 1.2 | [![cpp](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/cpp/cpp_24x24.png)](solutions/takkar.cpp)|
 |[takkfyrirmig.cpp](https://open.kattis.com/problems/takkfyrirmig)| takkfyrirmig | 1.2 | [![cpp](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/cpp/cpp_24x24.png)](solutions/takkfyrirmig.cpp)|
 |[tilhamingju.cpp](https://open.kattis.com/problems/tilhamingju)| tilhamingju | 1.0 | [![cpp](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/cpp/cpp_24x24.png)](solutions/tilhamingju.cpp)|
+|[tilhamingju.py](https://open.kattis.com/problems/tilhamingju)| tilhamingju | 1.0 | [![py](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/python/python_24x24.png)](solutions/tilhamingju.py)|
 |[tolvunarfraedingartelja.cpp](https://open.kattis.com/problems/tolvunarfraedingartelja)| tolvunarfraedingartelja | 1.1 | [![cpp](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/cpp/cpp_24x24.png)](solutions/tolvunarfraedingartelja.cpp)|
 |[triarea.cpp](https://open.kattis.com/problems/triarea)| triarea | 1.3 | [![cpp](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/cpp/cpp_24x24.png)](solutions/triarea.cpp)|
 |[twostones.cpp](https://open.kattis.com/problems/twostones)| twostones | 1.2 | [![cpp](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/cpp/cpp_24x24.png)](solutions/twostones.cpp)|
