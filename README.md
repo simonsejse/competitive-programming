@@ -7,13 +7,14 @@
 - **Auto-updated Statistics**:
 
 <!-- START_SOLVED_STATS -->
-## Total problems solved: 52
+## Total problems solved: 53
 
 Note that the table below is auto-generated. There might be slight inaccuracies.
 
 |Problem Name|Problem ID|Languages|Difficulty|
 |:---|:---|:---|:---|
 |[aleidibio.cpp](https://open.kattis.com/problems/aleidibio)| aleidibio | 1.1 | [![cpp](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/cpp/cpp_24x24.png)](solutions/aleidibio.cpp)|
+|[ameriskur.py](https://open.kattis.com/problems/ameriskur)| ameriskur | 1.3 | [![py](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/python/python_24x24.png)](solutions/ameriskur.py)|
 |[autori.cpp](https://open.kattis.com/problems/autori)| autori | 1.2 | [![cpp](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/cpp/cpp_24x24.png)](solutions/autori.cpp)|
 |[avoidingtheabyss.cpp](https://open.kattis.com/problems/avoidingtheabyss)| avoidingtheabyss | 2.7 | [![cpp](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/cpp/cpp_24x24.png)](solutions/avoidingtheabyss.cpp)|
 |[bergmal.cpp](https://open.kattis.com/problems/bergmal)| bergmal | 1.2 | [![cpp](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/cpp/cpp_24x24.png)](solutions/bergmal.cpp)|
