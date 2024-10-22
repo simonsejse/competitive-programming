@@ -2,7 +2,6 @@ import os
 import requests
 from bs4 import BeautifulSoup
 import json
-import re
 
 file_whitelist = {'bnn_accuracy.py', 'testing_tool.py', 'unununion_find.py'}
 image_src = 'https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/' # hey this a credit!
@@ -113,13 +112,12 @@ with open('README.md', 'w', encoding='utf8') as f:
 
 ########################### THIS IS FOR TABLE OF CONTENTS ###########################
 
+# Function to generate a slug from a heading
 def generate_slug(heading):
-    # Remove '##', strip whitespace, and remove special characters (emojis, etc.)
+    # Remove '##' and strip whitespace
     heading = heading.replace('##', '').strip()
-    # Remove any non-alphanumeric characters except spaces
-    heading = re.sub(r'[^a-zA-Z0-9 ]+', '', heading)
     # Replace spaces with hyphens and make lowercase
-    return heading.lower().replace(' ', '-')
+    return heading.lower().replace(' ', '-').replace(':', '')
 
 # Function to create the table of contents based on ## headings
 def generate_table_of_contents(lines):
