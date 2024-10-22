@@ -7,13 +7,14 @@
 - **Auto-updated Statistics**:
 
 <!-- START_SOLVED_STATS -->
+
 #### 📊 Problem Solving Statistics
 
-| Language | Files Solved |
-|----------|--------------|
-| C++ | 50 |
-| Python | 1 |
-| **Total** | **49** |
+| Language  | Files Solved |
+| --------- | ------------ |
+| C++       | 50           |
+| Python    | 1            |
+| **Total** | **49**       |
 
 <!-- END_SOLVED_STATS -->
 
@@ -182,3 +183,30 @@ VSCODE_PATH = r"C:\Users\simon\AppData\Local\Programs\Microsoft VS Code\Code.exe
 ### 📂 Template Files
 
 Ensure you have template.py and template.cpp in your root directory to serve as templates for new problem sets.
+
+## 🔧 Setup Folding for Template Files
+
+1. **Install the Extension**:  
+   Download the [Auto Region Folder](https://marketplace.visualstudio.com/items?itemName=DNEK.auto-region-folder) extension.
+
+2. **Configure Settings**:  
+    Add this to your `settings.json` to enable import folding by default:
+
+   ```json
+   "editor.foldingImportsByDefault": true
+   ```
+
+   Now the template.cpp file will automatically fold the imports and core library definitions for a cleaner view.
+
+## Setup Auto CPH Judge with Competitive Companion
+
+1. **Install Competitive Companion** extension for Google Chrome.
+2. **Configure `settings.json`**:
+
+   ```json
+   "cph.general.defaultLanguage": "cpp",
+   "cph.general.defaultLanguageTemplateFileLocation": "C:\\Users\\simon\\dev\\GitHub\\competetive-programming\\templates\\template.cpp"
+   ```
+
+3. Usage:
+   Automatically fetch problems and use your custom C++ template.
