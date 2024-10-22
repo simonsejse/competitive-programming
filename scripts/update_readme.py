@@ -102,7 +102,7 @@ if start_index is not None and end_index is not None:
     lines = lines[:start_index+1] + [
         f'## Total problems solved: {len(contents)}\n\n',
         'Note that the table below is auto-generated. There might be slight inaccuracies.\n\n',
-        '|Problem Name|Problem ID|Languages|Difficulty|\n|:---|:---|:---|:---|\n'
+        '|Problem Name|Problem ID|Difficulty|Languages|\n|:---|:---|:---|:---|\n'
     ] + [content for _, content in sorted(contents)] + lines[end_index:]
 
 # Write the modified content back to the README file
