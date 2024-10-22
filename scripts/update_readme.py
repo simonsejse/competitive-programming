@@ -1,133 +1,110 @@
 import os
+import requests
+from bs4 import BeautifulSoup
+import json
 
-# Language definitions and their respective file extensions
-LANGUAGES = [
-    ('C++', '.cpp'),
-    ('Python', '.py'),
-]
+file_whitelist = {'bnn_accuracy.py', 'testing_tool.py', 'unununion_find.py'}
+image_src = 'https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/' # hey this a credit!
+image_mapper = {
+    'py':   'python',
+    'c':    'c',
+    'cpp':  'cpp',
+    'cs':   'csharp',
+    'go':   'go',
+    'hs':   'haskell',
+    'java': 'java',
+    'kt':   'kotlin',
+    'php':  'php',
+    'rb':   'ruby',
+    'js':   'javascript'
+}
 
-class FileCounter:
-    """Counts files based on language and extension in the root directory only."""
-    def __init__(self, languages):
-        self.languages = languages
+get_image = lambda e,s=24: f'{image_src}{image_mapper[e]}/{image_mapper[e]}_{s}x{s}.png'
 
-    def count_files(self, directory):
-        """Count files by extension in the root directory only."""
-        language_counts = {lang: 0 for lang, _ in self.languages}
+def load_cached_difficulties(cache_file='difficulty_cache.json'):
+    if os.path.exists(cache_file):
+        with open(cache_file, 'r') as f:
+            return json.load(f)
+    return {}
 
-        print(f"Scanning directory: {directory}")  # Debugging line
-        # Only check files in the specified root directory, excluding subdirectories
-        for file in os.listdir(directory):
-            file_path = os.path.join(directory, file)
+def save_cached_difficulties(cache, cache_file='difficulty_cache.json'):
+    with open(cache_file, 'w') as f:
+        json.dump(cache, f, indent=4)
 
-            # Count only files directly in the root directory, not subdirectories
-            if os.path.isfile(file_path) and os.path.dirname(file_path) == directory:
-                for lang, ext in self.languages:
-                    if file.endswith(ext):
-                        language_counts[lang] += 1
-                        print(f"Counted {file}: {lang}")  # Debugging line
+def get_problem_difficulty(pid, cache):
+    # If the difficulty is cached, return it
+    if pid in cache:
+        return cache[pid]
+    
+    # Otherwise, request the difficulty from the Kattis website
+    url = f"https://open.kattis.com/problems/{pid}"
+    response = requests.get(url)
+    if response.status_code == 200:
+        # Parse the page using BeautifulSoup
+        soup = BeautifulSoup(response.text, 'html.parser')
+        # Find the difficulty number based on the class name
+        difficulty_span = soup.find('span', class_='difficulty_number')
+        if difficulty_span:
+            difficulty = difficulty_span.text.strip()
+            # Cache the result before returning it
+            cache[pid] = difficulty
+            return difficulty
+    return "N/A"
 
-        print("Final Language Counts:", language_counts)  # Debugging line
-        return language_counts
+# Load the cached difficulties
+difficulty_cache = load_cached_difficulties()
 
-class HTMLFormatter:
-    """Formats the language statistics into a styled HTML table."""
-    def format(self, language_counts):
-        """Generate a styled HTML card for displaying results without extra spaces or newlines."""
-        total_count = sum(language_counts.values())
+contents = []
+# Iterate through files in the 'solutions' directory
+for file in sorted(os.listdir('solutions')):
+    file_path = os.path.join('solutions', file)
+    
+    # Check if the item is a file and its extension is in image_mapper
+    if os.path.isfile(file_path):
+        ext = file.split('.')[-1]
 
-        # Create a single-line HTML block to prevent Markdown formatting issues
-        html = (
-            '<div style="font-family: Arial, sans-serif; margin: 20px; width: 400px;">'
-            '<div style="background-color: #007bff; color: white; padding: 15px; font-size: 20px; text-align: center; border-radius: 5px 5px 0 0;">'
-            'Problem Solving Statistics'
-            '</div>'
-            '<div style="background-color: #f3f4f7; padding: 20px; border: 1px solid #ddd; border-top: none; border-radius: 0 0 5px 5px;">'
-            '<table style="width: 100%; border-collapse: collapse; margin-top: 10px;">'
-            '<thead style="background-color: #007bff; color: #ffffff;">'
-            '<tr><th style="padding: 8px; border: 1px solid #ddd;">Language</th>'
-            '<th style="padding: 8px; border: 1px solid #ddd;">Files Solved</th></tr>'
-            '</thead><tbody>'
-        )
+        if ext in image_mapper:
+            pid = file.split('.')[0]  # Use the filename without extension as the problem ID
+            url = f"https://open.kattis.com/problems/{pid}"
 
-        # Add each language count to the table
-        for language, count in language_counts.items():
-            html += (
-                f'<tr>'
-                f'<td style="padding: 8px; border: 1px solid #ddd; background-color: #e9ecef;">{language}</td>'
-                f'<td style="padding: 8px; border: 1px solid #ddd; background-color: #ffffff;">{count}</td>'
-                f'</tr>'
-            )
+            # Get the difficulty from Kattis or from the cache
+            difficulty = get_problem_difficulty(pid, difficulty_cache)
 
-        # Add total count row
-        html += (
-            '</tbody><tfoot>'
-            f'<tr><th style="padding: 8px; border: 1px solid #ddd; background-color: #e9ecef;">Total</th>'
-            f'<th style="padding: 8px; border: 1px solid #ddd; background-color: #ffffff;">{total_count}</th>'
-            '</tr></tfoot></table></div></div>'
-        )
-
-        return html
-
-class MarkdownFormatter:
-    """Formats the language statistics into a Markdown table."""
-    def format(self, language_counts):
-        """Generate a Markdown table for displaying results."""
-        total_count = sum(language_counts.values())
-
-        # Use Markdown formatting with emoji
-        markdown = "#### 📊 Problem Solving Statistics\n\n"
-        markdown += "| Language | Files Solved |\n"
-        markdown += "|----------|--------------|\n"
-
-        # Add each language count to the table
-        for language, count in language_counts.items():
-            markdown += f"| {language} | {count} |\n"
-
-        # Add total count row
-        markdown += f"| **Total** | **{total_count - len(language_counts)}** |\n"
-
-        return markdown
-
-
-class ReadmeUpdater:
-    """Updates the README.md file with new language statistics."""
-    def __init__(self, readme_path, formatter, counter):
-        self.readme_path = readme_path
-        self.formatter = formatter
-        self.counter = counter
-
-    def update_readme(self, directory):
-        """Reads, updates, and writes back to the README file."""
-        language_counts = self.counter.count_files(directory)
-
-        html_card = self.formatter.format(language_counts)
-
-        with open(self.readme_path, 'r') as file:
-            readme_content = file.read()
-
-        start_marker = "<!-- START_SOLVED_STATS -->"
-        end_marker = "<!-- END_SOLVED_STATS -->"
-
-        if start_marker in readme_content and end_marker in readme_content:
-            before = readme_content.split(start_marker)[0]
-            after = readme_content.split(end_marker)[1]
-            updated_content = f"{before}{start_marker}\n{html_card}\n{end_marker}{after}"
+            # Generate the display for the file
+            image_icon = f"[![{ext}]({get_image(ext)})]({file_path})" if file not in file_whitelist else ""
             
-            with open(self.readme_path, 'w') as file:
-                file.write(updated_content)
+            # Append the formatted line to contents, including difficulty
+            contents.append([pid, f"|[{file}]({url})| {pid} | {difficulty} | {image_icon}|\n"])
 
-            print("README.md updated successfully!")
-        else:
-            print("Markers not found in README.md")
+# Save the updated difficulties cache
+save_cached_difficulties(difficulty_cache)
 
-if __name__ == "__main__":
-    readme_path     = os.path.join(os.getenv('GITHUB_WORKSPACE', ''), 'README.md')
-    repo_directory = os.getenv('GITHUB_WORKSPACE', os.getcwd())
-    repo_directory = os.path.join(repo_directory, 'solutions')
+# Read the current content of the README file
+lines = open('README.md', 'r', encoding='utf8').readlines()
 
-    file_counter    = FileCounter(LANGUAGES)
-    md_formatter    = MarkdownFormatter()
-    readme_updater  = ReadmeUpdater(readme_path, md_formatter, file_counter)
+# Define the start and end markers
+start_marker = '<!-- START_SOLVED_STATS -->'
+end_marker = '<!-- END_SOLVED_STATS -->'
 
-    readme_updater.update_readme(repo_directory)
+# Find the start and end markers in the lines
+start_index = None
+end_index = None
+for i, line in enumerate(lines):
+    if start_marker in line:
+        start_index = i
+    if end_marker in line:
+        end_index = i
+        break
+
+# If both markers are found, replace content between them
+if start_index is not None and end_index is not None:
+    # Keep the lines outside the markers and prepare new content for inside
+    lines = lines[:start_index+1] + [
+        f'## Total problems solved: {len(contents)}\n\n',
+        'Note that the table below is auto-generated. There might be slight inaccuracies.\n\n',
+        '|Problem Name|Problem ID|Languages|\n|:---|:---|:---|\n'
+    ] + [content for _, content in sorted(contents)] + lines[end_index:]
+
+# Write the modified content back to the README file
+with open('README.md', 'w', encoding='utf8') as f:
+    f.writelines(lines)
