@@ -58,7 +58,6 @@ def get_problem_difficulty(pid, cache):
         difficulty_span = soup.find('span', class_='difficulty_number')
         if difficulty_span:
             difficulty = difficulty_span.text.strip()
-            # Cache the result before returning it
             cache[pid] = {
                 'difficulty': difficulty,
                 'last_updated': get_current_date()
@@ -79,7 +78,8 @@ for file in sorted(os.listdir('solutions')):
 
         if ext in image_mapper:
             pid = file.split('.')[0]  # Use the filename without extension as the problem ID
-            url = f"https://open.kattis.com/problems/{pid}"
+            kattis_url = f"https://open.kattis.com/problems/{pid}"
+            repo_url = f"https://github.com/simonsejse/competitive-programming/tree/main/solutions/{file}"
 
             # Get the difficulty from Kattis or from the cache
             difficulty = get_problem_difficulty(pid, difficulty_cache)
@@ -88,7 +88,7 @@ for file in sorted(os.listdir('solutions')):
             image_icon = f"[![{ext}]({get_image(ext)})]({file_path})" if file not in file_whitelist else ""
             
             # Append the formatted line to contents, including difficulty
-            contents.append([pid, f"|[{file}]({url})| {pid} | {difficulty} | {image_icon}|\n"])
+            contents.append([pid, f"|[{file}]({file})| [{pid}]({kattis_url}) | {difficulty} | {image_icon}|\n"])
 
 # Save the updated difficulties cache
 save_cached_difficulties(difficulty_cache)
