@@ -11,7 +11,7 @@
 
 Note that the table below is auto-generated. There might be slight inaccuracies.
 
-|Problem Name|Problem ID|Languages|Difficulty|
+|Problem Name|Problem ID|Difficulty|Languages|
 |:---|:---|:---|:---|
 |[aleidibio.cpp](https://open.kattis.com/problems/aleidibio)| aleidibio | 1.1 | [![cpp](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/cpp/cpp_24x24.png)](solutions/aleidibio.cpp)|
 |[ameriskur.py](https://open.kattis.com/problems/ameriskur)| ameriskur | 1.3 | [![py](https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/python/python_24x24.png)](solutions/ameriskur.py)|
