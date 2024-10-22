@@ -108,3 +108,53 @@ if start_index is not None and end_index is not None:
 # Write the modified content back to the README file
 with open('README.md', 'w', encoding='utf8') as f:
     f.writelines(lines)
+
+
+########################### THIS IS FOR TABLE OF CONTENTS ###########################
+
+# Function to generate a slug from a heading
+def generate_slug(heading):
+    # Remove '##' and strip whitespace
+    heading = heading.replace('##', '').strip()
+    # Replace spaces with hyphens and make lowercase
+    return heading.lower().replace(' ', '-').replace(':', '')
+
+# Function to create the table of contents based on ## headings
+def generate_table_of_contents(lines):
+    toc = ["## Table of Contents\n"]
+    for line in lines:
+        if line.startswith('## ') and not line.startswith('## Table of Contents'):
+            # Extract the heading text and generate a slug for the link
+            heading_text = line.strip().replace('##', '').strip()
+            heading_slug = generate_slug(heading_text)
+            toc.append(f"- [{heading_text}](#{heading_slug})\n")
+    return toc
+
+# Read the current content of the README file
+lines = open('README.md', 'r', encoding='utf8').readlines()
+
+# Define the start and end markers for the Table of Contents
+toc_start_marker = '<!-- START_TABLE_OF_CONTENTS -->'
+toc_end_marker = '<!-- END_TABLE_OF_CONTENTS -->'
+
+# Find the start and end markers for the Table of Contents
+toc_start_index = None
+toc_end_index = None
+for i, line in enumerate(lines):
+    if toc_start_marker in line:
+        toc_start_index = i
+    if toc_end_marker in line:
+        toc_end_index = i
+        break
+
+# Generate the Table of Contents based on the ## headings
+table_of_contents = generate_table_of_contents(lines)
+
+# If both TOC markers are found, replace content between them
+if toc_start_index is not None and toc_end_index is not None:
+    # Keep the lines outside the TOC markers and insert the new Table of Contents inside
+    lines = lines[:toc_start_index+1] + table_of_contents + lines[toc_end_index:]
+
+# Write the modified content back to the README file
+with open('README.md', 'w', encoding='utf8') as f:
+    f.writelines(lines)
