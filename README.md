@@ -7,14 +7,13 @@
 - **Auto-updated Statistics**:
 
 <!-- START_SOLVED_STATS -->
-
 #### 📊 Problem Solving Statistics
 
-| Language  | Files Solved |
-| --------- | ------------ |
-| C++       | 50           |
-| Python    | 1            |
-| **Total** | **49**       |
+| Language | Files Solved |
+|----------|--------------|
+| C++ | 50 |
+| Python | 1 |
+| **Total** | **49** |
 
 <!-- END_SOLVED_STATS -->
 
