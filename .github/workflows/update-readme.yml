@@ -28,7 +28,10 @@ jobs:
 
       - name: Run README update script
         run: python scripts/update_readme.py
-        
+
+      - name: Run BUILD docs script
+        run: python scripts/build_docs.py
+
       - name: Commit and push changes
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -39,5 +42,3 @@ jobs:
           git add README.md
           git commit -m "📝 DOCS: Automatic CI/CD Update of README."
           git push
-
-          
