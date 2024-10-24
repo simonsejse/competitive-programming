@@ -3,7 +3,7 @@
 <!-- START_TABLE_OF_CONTENTS -->
 ## Table of Contents
 - [🔗 Kattis Profile](#-kattis-profile)
-- [Total problems solved: 73](#total-problems-solved-73)
+- [Total problems solved: 74](#total-problems-solved-74)
 - [📂 Directory Structure](#-directory-structure)
 - [🔧 Setup: Auto Submit and Move](#-setup-auto-submit-and-move)
 - [🔧 Setup: Auto-Create Problem Set](#-setup-auto-create-problem-set)
@@ -20,7 +20,7 @@
 - **Auto-updated Statistics**:
 
 <!-- START_SOLVED_STATS -->
-## Total problems solved: 73
+## Total problems solved: 74
 
 Note that the table below is auto-generated. There might be slight inaccuracies.
 
@@ -62,6 +62,7 @@ Note that the table below is auto-generated. There might be slight inaccuracies.
 |[infinitecash.py](https://github.com/simonsejse/competitive-programming/tree/main/solutions/infinitecash.py)| [infinitecash](https://open.kattis.com/problems/infinitecash) | 7.0 | [![py](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/python/python_24x24.png)](solutions/infinitecash.py)|
 |[isithalloween.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/isithalloween.cpp)| [isithalloween](https://open.kattis.com/problems/isithalloween) | 1.3 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/isithalloween.cpp)|
 |[jackolanternjuxtaposition.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/jackolanternjuxtaposition.cpp)| [jackolanternjuxtaposition](https://open.kattis.com/problems/jackolanternjuxtaposition) | 1.2 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/jackolanternjuxtaposition.cpp)|
+|[keysphonewallet.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/keysphonewallet.cpp)| [keysphonewallet](https://open.kattis.com/problems/keysphonewallet) | 1.3 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/keysphonewallet.cpp)|
 |[kikiboba.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/kikiboba.cpp)| [kikiboba](https://open.kattis.com/problems/kikiboba) | 1.1 - 1.3 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/kikiboba.cpp)|
 |[knittingpattern.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/knittingpattern.cpp)| [knittingpattern](https://open.kattis.com/problems/knittingpattern) | 3.0 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/knittingpattern.cpp)|
 |[kvedja.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/kvedja.cpp)| [kvedja](https://open.kattis.com/problems/kvedja) | 1.1 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/kvedja.cpp)|
