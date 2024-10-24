@@ -255,16 +255,15 @@
         "difficulty": "1.3",
         "last_updated": "2024-10-22"
     },
-<<<<<<< HEAD
+    "dicecup": {
+        "difficulty": "1.4",
+        "last_updated": "2024-10-22"
+    },
     "bela": {
         "difficulty": "1.4",
         "last_updated": "2024-10-24"
     },
     "detaileddifferences": {
-        "difficulty": "1.4",
-        "last_updated": "2024-10-24"
-    },
-    "dicecup": {
         "difficulty": "1.4",
         "last_updated": "2024-10-24"
     },
@@ -279,10 +278,5 @@
     "reversebinary": {
         "difficulty": "1.4",
         "last_updated": "2024-10-24"
-=======
-    "dicecup": {
-        "difficulty": "1.4",
-        "last_updated": "2024-10-22"
->>>>>>> origin/main
     }
 }
