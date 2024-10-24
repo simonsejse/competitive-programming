@@ -33,4 +33,13 @@
 		],
 		"description": "Read string from input"
 	},
+	"Read string line": {
+		"scope": "cpp",
+		"prefix": "srl",
+		"body": [
+			"strl_read($1)",
+			"$2",
+		],
+		"description": "Read string line from input"
+	},
 }
