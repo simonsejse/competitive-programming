@@ -25,7 +25,7 @@ image_mapper = {
 
 # Function to generate the correct image URL
 def get_image(ext, size=24):
-    return f'https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/{image_mapper[ext]}/{image_mapper[ext]}_{size}x{size}.png'
+    return f'https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/{image_mapper[ext]}/{image_mapper[ext]}_{size}x{size}.png'
 
 # Function to get the current date
 def get_current_date():
@@ -34,9 +34,14 @@ def get_current_date():
 # Load cached difficulties from a file
 def load_cached_difficulties(cache_file='difficulty_cache.json'):
     if os.path.exists(cache_file):
-        with open(cache_file, 'r') as f:
-            return json.load(f)
+        try:
+            with open(cache_file, 'r') as f:
+                return json.load(f)
+        except json.JSONDecodeError:
+            print(f"Error loading {cache_file}, resetting cache.")
+            return {}
     return {}
+
 
 # Save cached difficulties to a file
 def save_cached_difficulties(cache, cache_file='difficulty_cache.json'):
