@@ -42,16 +42,15 @@ jobs:
           git add README.md
           git commit -m "📝 DOCS: Automatic CI/CD Update of README."
           git push
-
-deploy-to-pages:
-    needs: update-readme  # Run this after 'update-readme' job completes
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs  # The folder where your GitHub Pages content is located (e.g., /docs)
+  deploy-to-pages:
+      needs: update-readme  # Run this after 'update-readme' job completes
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout repository
+          uses: actions/checkout@v3
+  
+        - name: Deploy to GitHub Pages
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+            github_token: ${{ secrets.GITHUB_TOKEN }}
+            publish_dir: ./docs  # The folder where your GitHub Pages content is located (e.g., /docs)
