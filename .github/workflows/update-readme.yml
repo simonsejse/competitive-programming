@@ -41,10 +41,14 @@ jobs:
           git add difficulty_cache.json
           git add README.md
           git add docs/index.html 
+
+          # Debugging output
+          git status
+          
           git commit -m "📝 DOCS: Automatic CI/CD Update of README."
           git push
   deploy-to-pages:
-      needs: update-readme  # Run this after 'update-readme' job completes
+      needs: update-readme  
       runs-on: ubuntu-latest
       steps:
         - name: Checkout repository
@@ -54,4 +58,4 @@ jobs:
           uses: peaceiris/actions-gh-pages@v3
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./docs  # The folder where your GitHub Pages content is located (e.g., /docs)
+            publish_dir: ./docs  
