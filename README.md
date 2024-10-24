@@ -3,7 +3,7 @@
 <!-- START_TABLE_OF_CONTENTS -->
 ## Table of Contents
 - [🔗 Kattis Profile](#-kattis-profile)
-- [Total problems solved: 72](#total-problems-solved-72)
+- [Total problems solved: 73](#total-problems-solved-73)
 - [📂 Directory Structure](#-directory-structure)
 - [🔧 Setup: Auto Submit and Move](#-setup-auto-submit-and-move)
 - [🔧 Setup: Auto-Create Problem Set](#-setup-auto-create-problem-set)
@@ -20,7 +20,7 @@
 - **Auto-updated Statistics**:
 
 <!-- START_SOLVED_STATS -->
-## Total problems solved: 72
+## Total problems solved: 73
 
 Note that the table below is auto-generated. There might be slight inaccuracies.
 
@@ -53,6 +53,7 @@ Note that the table below is auto-generated. There might be slight inaccuracies.
 |[fifa.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/fifa.cpp)| [fifa](https://open.kattis.com/problems/fifa) | 1.1 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/fifa.cpp)|
 |[findingana.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/findingana.cpp)| [findingana](https://open.kattis.com/problems/findingana) | 1.2 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/findingana.cpp)|
 |[flatbokuveisla.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/flatbokuveisla.cpp)| [flatbokuveisla](https://open.kattis.com/problems/flatbokuveisla) | 1.2 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/flatbokuveisla.cpp)|
+|[greetings2.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/greetings2.cpp)| [greetings2](https://open.kattis.com/problems/greetings2) | 1.3 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/greetings2.cpp)|
 |[heroesofvelmar.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/heroesofvelmar.cpp)| [heroesofvelmar](https://open.kattis.com/problems/heroesofvelmar) | 2.1 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/heroesofvelmar.cpp)|
 |[hipphipp.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/hipphipp.cpp)| [hipphipp](https://open.kattis.com/problems/hipphipp) | 1.1 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/hipphipp.cpp)|
 |[hipphipphurra.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/hipphipphurra.cpp)| [hipphipphurra](https://open.kattis.com/problems/hipphipphurra) | 1.2 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/hipphipphurra.cpp)|
