@@ -4,66 +4,13 @@ from bs4 import BeautifulSoup
 import json
 import re
 from datetime import datetime, timedelta
+from util import (
+    get_image, image_mapper, load_cached_difficulties, save_cached_difficulties,
+    get_problem_difficulty,generate_table_of_contents
+)
 
-CACHE_EXPIRY_DAYS = 60 
 
 file_whitelist = {'bnn_accuracy.py', 'testing_tool.py', 'unununion_find.py'}
-image_src = 'https://github.com/abrahamcalf/programming-languages-logos/blob/master/src/' # hey this a credit!
-image_mapper = {
-    'py':   'python',
-    'c':    'c',
-    'cpp':  'cpp',
-    'cs':   'csharp',
-    'go':   'go',
-    'hs':   'haskell',
-    'java': 'java',
-    'kt':   'kotlin',
-    'php':  'php',
-    'rb':   'ruby',
-    'js':   'javascript'
-}
-
-get_image = lambda e,s=24: f'{image_src}{image_mapper[e]}/{image_mapper[e]}_{s}x{s}.png'
-
-def get_current_date():
-    return datetime.now().strftime('%Y-%m-%d')
-
-def load_cached_difficulties(cache_file='difficulty_cache.json'):
-    if os.path.exists(cache_file):
-        with open(cache_file, 'r') as f:
-            return json.load(f)
-    return {}
-
-def save_cached_difficulties(cache, cache_file='difficulty_cache.json'):
-    with open(cache_file, 'w') as f:
-        json.dump(cache, f, indent=4)
-
-def get_problem_difficulty(pid, cache):
-    # If the difficulty is cached, return it
-    if pid in cache:
-        last_updated = cache[pid].get('last_updated')
-        if last_updated:
-            last_updated_date = datetime.strptime(last_updated, '%Y-%m-%d')
-            if (datetime.now() - last_updated_date).days <= CACHE_EXPIRY_DAYS:
-                return cache[pid]['difficulty'] 
-    
-    # Otherwise, request the difficulty from the Kattis website
-    url = f"https://open.kattis.com/problems/{pid}"
-    response = requests.get(url)
-
-    if response.status_code == 200:
-        # Parse the page using BeautifulSoup
-        soup = BeautifulSoup(response.text, 'html.parser')
-        # Find the difficulty number based on the class name
-        difficulty_span = soup.find('span', class_='difficulty_number')
-        if difficulty_span:
-            difficulty = difficulty_span.text.strip()
-            cache[pid] = {
-                'difficulty': difficulty,
-                'last_updated': get_current_date()
-            }
-            return difficulty
-    return "N/A"
 
 difficulty_cache = load_cached_difficulties()
 
@@ -125,27 +72,6 @@ with open('README.md', 'w', encoding='utf8') as f:
 
 
 ########################### THIS IS FOR TABLE OF CONTENTS ###########################
-
-def generate_slug(heading):
-    # Remove '##', strip whitespace, and remove special characters (emojis, etc.)
-    heading = heading.replace('##', '').strip()
-    # Remove all non-alphanumeric characters except spaces (this removes emojis and symbols)
-    heading = re.sub(r'[^\w\s-]', '', heading)
-    # Replace spaces with hyphens, make it lowercase
-    return heading.lower().replace(' ', '-')
-
-# Function to create the table of contents based on ## headings
-def generate_table_of_contents(lines):
-    toc = ["## Table of Contents\n"]
-    for line in lines:
-        if line.startswith('## ') and not line.startswith('## Table of Contents'):
-            # Extract the heading text and generate a slug for the link
-            heading_text = line.strip().replace('##', '').strip()
-            heading_slug = generate_slug(heading_text)
-            toc.append(f"- [{heading_text}](#{heading_slug})\n")
-    return toc
-
-# Read the current content of the README file
 lines = open('README.md', 'r', encoding='utf8').readlines()
 
 # Define the start and end markers for the Table of Contents
