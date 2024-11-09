@@ -1,3 +1,4 @@
+// https://open.kattis.com/problems/hissingmicrophone
 #include <algorithm>
 #include <cassert>
 #include <cmath>
@@ -38,6 +39,7 @@ using namespace std;
 #define sc set<char>
 
 /* 2. FUNCTIONS */
+#define dbl_read(...) double __VA_ARGS__; read(__VA_ARGS__)
 #define ll_read(...) ll __VA_ARGS__; read(__VA_ARGS__)
 #define str_read(...) string __VA_ARGS__; read(__VA_ARGS__)
 void read() {}
@@ -142,6 +144,7 @@ void print(const T& first, const Args&... args) { print(first); print(args...); 
 #define MOD 1000000007
 #define PI 3.1415926535897932384626433832795
 #define NL "\n"
+#define NLL "\n\n"
 ll min(ll a,int b) { if (a<b) return a; return b; }
 ll min(int a,ll b) { if (a<b) return a; return b; }
 ll max(ll a,int b) { if (a>b) return a; return b; }
@@ -173,19 +176,18 @@ int main(int argc, char* argv[]) {
   freopen("output.txt", "w", stdout); // output.txt
 #endif
   str_read(s);
-  ll   ok        = 0;
-  char prev_char = s[0];
-  if (s.length() < 2) {
-    print("no hiss", NL);
-    return 0;
-  }
+  int ss = 0;
 
-  f(i, 0, s.length() - 1) { ok |= (s[i] == 's' && s[i + 1] == 's'); }
-  if (ok) {
-    cout << "hiss\n";
-  } else {
-    cout << "no hiss\n";
+  EACH(c, s) {
+    ss += c == 's';
+    if (ss >= 2) {
+      print("hiss");
+      return 0;
+    }
+    if (c != 's')
+      ss = 0;
   }
+  print("no hiss");
 
   return 0;
 }
