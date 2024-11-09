@@ -1,3 +1,4 @@
+// https://open.kattis.com/problems/keysphonewallet
 #include <algorithm>
 #include <cassert>
 #include <cmath>
@@ -34,20 +35,13 @@ using namespace std;
 #define vll vector<long long>
 #define vpsi vector<pair<string, int>>
 #define mii map<int, int>
-#define mci map<char, int>
-#define msi map<string, int>
-#define mss map<string, string>
-#define msl map<string, long long>
-#define mls map<long long, string>
 #define si set<int>
 #define sc set<char>
-#define ss set<string>
-#define sl set<long long>
-  
+
 /* 2. FUNCTIONS */
+#define dbl_read(...) double __VA_ARGS__; read(__VA_ARGS__)
 #define ll_read(...) ll __VA_ARGS__; read(__VA_ARGS__)
 #define str_read(...) string __VA_ARGS__; read(__VA_ARGS__)
-#define dbl_read(...) double __VA_ARGS__; read(__VA_ARGS__)
 void read() {}
 template <typename T, typename... Args>
 void read(T& first, Args&... args) { std::cin >> first; read(args...); }
@@ -150,6 +144,7 @@ void print(const T& first, const Args&... args) { print(first); print(args...); 
 #define MOD 1000000007
 #define PI 3.1415926535897932384626433832795
 #define NL "\n"
+#define NLL "\n\n"
 ll min(ll a,int b) { if (a<b) return a; return b; }
 ll min(int a,ll b) { if (a<b) return a; return b; }
 ll max(ll a,int b) { if (a>b) return a; return b; }
@@ -180,22 +175,26 @@ int main(int argc, char* argv[]) {
   freopen("input.txt", "r", stdin);   // input.txt
   freopen("output.txt", "w", stdout); // output.txt
 #endif
-  ll_read(a);
+  ll_read(n);
 
-  vs items = {"keys", "phone", "wallet"};
-  f(i, 0, a) {
-    str_read(item);
-    auto it = find(items.begin(), items.end(), item);
-    if (it != items.end()) {
-      items.erase(it);
+  string s;
+  vs v = {"keys", "phone", "wallet"};
+
+  f(i, 0, n) {
+    read(s);
+    auto it = find(v.B, v.E, s);
+    if (it != v.E) {
+      ll index = distance(v.B, it);
+      v.erase(v.B+index);
     }
   }
-
-  if (items.empty()) {
+  if (!v.size())
     print("ready");
-  } else {
-    EACH(i, items) { print(i, NL); }
+  
+  EACH (str, v) {
+    print(str, NL);
   }
+
 
   return 0;
 }
