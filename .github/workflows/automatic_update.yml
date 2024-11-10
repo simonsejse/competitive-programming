@@ -26,6 +26,21 @@ jobs:
           pip install requests
           pip install beautifulsoup4
 
+      - name: Show current working directory
+        run: pwd
+
+      - name: List root directory
+        run: ls -la
+
+      - name: Show submodule status
+        run: git submodule status
+
+      - name: List 'utilities' directory
+        run: ls -la utilities
+
+      - name: List 'utilities/scripts' directory
+        run: ls -la utilities/scripts
+
       - name: Run README update script
         working-directory: ${{ github.workspace }}
         run: python utilities/scripts/update_readme.py
@@ -49,7 +64,7 @@ jobs:
 
           git commit -m "📝 DOCS: Automatic CI/CD Update of README."
           git push
-          
+
   deploy-to-pages:
     needs: update-readme
     runs-on: ubuntu-latest
