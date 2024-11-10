@@ -77,6 +77,6 @@
     "bitset": "cpp"
   },
   "cph.general.defaultLanguage": "cpp",
-  "cph.general.defaultLanguageTemplateFileLocation": "C:\\Users\\simon\\dev\\GitHub\\competetive-programming\\templates\\template.cpp",
+  "cph.general.defaultLanguageTemplateFileLocation": "C:\\Users\\simon\\dev\\GitHub\\competetive-programming\\utilities\\templates\\template.cpp",
   "editor.foldingImportsByDefault": true
 }

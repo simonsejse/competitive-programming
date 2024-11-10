@@ -1,0 +1,35 @@
+// CTRL+SHIFT+P AND '>' AND SEARCH Preferences: Open Keyboard Shortcuts (JSON) and put this in!
+[
+  {
+    "key": "oem_5",
+    "command": "editor.action.inlineSuggest.trigger",
+    "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
+  },
+  {
+    "key": "alt+oem_5",
+    "command": "-editor.action.inlineSuggest.trigger",
+    "when": "config.github.copilot.inlineSuggest.enable && editorTextFocus && !editorHasSelection && !inlineSuggestionsVisible"
+  },
+  {
+    "key": "numpad0",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Submit to Kattis",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "End",
+    "command": "cursorBottom"
+  },
+  {
+    "key": "Home",
+    "command": "cursorTop"
+  },
+  {
+    "key": "shift+oem_5 shift+right",
+    "command": "cursorLineEnd"
+  },
+  {
+    "key": "shift+oem_5 shift+left",
+    "command": "cursorLineStart"
+  }
+]

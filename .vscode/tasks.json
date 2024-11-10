@@ -6,7 +6,7 @@
             "type": "shell",
             "command": "python",
             "args": [
-                "${workspaceFolder}/scripts/submit_and_move.py",
+                "${workspaceFolder}/utilities/scripts/individual_submit.py",
                 "${file}"
             ],
             "presentation": {
@@ -20,43 +20,5 @@
             },
             "problemMatcher": []
         },
-        {
-            "label": "Create New Problem Set (py)",
-            "type": "shell",
-            "command": "python",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": true,
-                "panel": "shared",
-                "showReuseMessage": false,
-                "clear": false,
-                "close": true 
-            },
-            "args": [
-                "${workspaceFolder}/scripts/create_problem_set.py",
-                "-l",
-                "py"
-            ]
-        },
-        {
-            "label": "Create New Problem Set (cpp)",
-            "type": "shell",
-            "command": "python",
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": true,
-                "panel": "shared",
-                "showReuseMessage": false,
-                "clear": false,
-                "close": true
-            },
-            "args": [
-                "${workspaceFolder}/scripts/create_problem_set.py",
-                "-l",
-                "cpp"
-            ]
-        }
     ],
 }
