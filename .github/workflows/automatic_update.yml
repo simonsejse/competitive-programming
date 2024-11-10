@@ -49,6 +49,7 @@ jobs:
 
           git commit -m "📝 DOCS: Automatic CI/CD Update of README."
           git push
+          
   deploy-to-pages:
     needs: update-readme
     runs-on: ubuntu-latest
