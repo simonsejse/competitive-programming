@@ -26,6 +26,17 @@ jobs:
           pip install requests
           pip install beautifulsoup4
 
+      - name: Remove cached submodule data
+        run: |
+          git submodule deinit -f utilities
+          rm -rf .git/modules/utilities
+          git submodule update --init --recursive
+      # Explicitly initialize and update submodules
+      - name: Force submodule initialization
+        run: |
+          git submodule sync
+          git submodule update --init --recursive
+
       - name: Show current working directory
         run: pwd
 
