@@ -25,6 +25,8 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests
           pip install beautifulsoup4
+      - name: List Files
+        run: ls -R
 
       - name: Run README update script
         run: python utilities/scripts/update_readme.py
