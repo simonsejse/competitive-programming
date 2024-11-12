@@ -35,6 +35,7 @@ using namespace std;
 #define sc set<char>
 
 /* 2. FUNCTIONS */
+#define strl_read(...) string __VA_ARGS__; getline(cin, __VA_ARGS__)
 void read() {}
 template <typename T, typename... Args>
 void read(T& first, Args&... args) { std::cin >> first; read(args...); }
@@ -49,7 +50,14 @@ void read(T& first, Args&... args) { std::cin >> first; read(args...); }
 #define EACH(a, x) for(auto& a : x)        // Iterate over elements of a container
 #define BOUND(lb, lb_op, var, up_op, up) ((lb) lb_op (var) && (var) up_op (up)) // Bound check
 #define IF(cond, true_expr, false_expr) do { if (cond) { true_expr; } else { false_expr; } } while(0)
-
+void read_lines(std::string& line) {
+    std::getline(std::cin, line);
+}
+template <typename... Args>
+void read_lines(std::string& line, Args&... args) {
+    std::getline(std::cin, line);
+    read_lines(args...);  // recursively read each line
+}
 /* 3. MATH SHORTCUTS */
 #define flr(x) floor(x)          // Shortcut for floor
 #define cl(x) ceil(x)            // Shortcut for ceil
@@ -140,8 +148,7 @@ int main(int argc, char* argv[]) {
   freopen("input.txt", "r", stdin);   // input.txt
   freopen("output.txt", "w", stdout); // output.txt
 #endif
-  str m;
-  read(m);
+  strl_read(m);
   EACH(c, m) { IF(c == ' ', continue, print(c)); }
   return 0;
 }
