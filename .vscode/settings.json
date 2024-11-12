@@ -74,7 +74,10 @@
     "xtr1common": "cpp",
     "xtree": "cpp",
     "sstream": "cpp",
-    "bitset": "cpp"
+    "bitset": "cpp",
+    "numeric": "cpp",
+    "*.tcc": "cpp",
+    "unordered_set": "cpp"
   },
   "cph.general.defaultLanguage": "cpp",
   "cph.general.defaultLanguageTemplateFileLocation": "C:\\Users\\simon\\dev\\GitHub\\competetive-programming\\utilities\\templates\\template.cpp",
