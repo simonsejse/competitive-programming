@@ -3,7 +3,7 @@
 <!-- START_TABLE_OF_CONTENTS -->
 ## Table of Contents
 - [🔗 Kattis Profile](#-kattis-profile)
-- [Total problems solved: 97](#total-problems-solved-97)
+- [Total problems solved: 102](#total-problems-solved-102)
 - [📂 Directory Structure](#-directory-structure)
 - [🔧 Setup: Auto Submit and Move](#-setup-auto-submit-and-move)
 - [🔧 Setup: Auto-Create Problem Set](#-setup-auto-create-problem-set)
@@ -20,7 +20,7 @@
 - **Auto-updated Statistics**:
 
 <!-- START_SOLVED_STATS -->
-## Total problems solved: 97
+## Total problems solved: 102
 
 Note that the table below is auto-generated. There might be slight inaccuracies.
 
@@ -85,9 +85,12 @@ Note that the table below is auto-generated. There might be slight inaccuracies.
 |[kvedja.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/kvedja.cpp)| [kvedja](https://open.kattis.com/problems/kvedja) | 1.1 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/kvedja.cpp)|
 |[lastfactorialdigit.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/lastfactorialdigit.cpp)| [lastfactorialdigit](https://open.kattis.com/problems/lastfactorialdigit) | 1.3 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/lastfactorialdigit.cpp)|
 |[leggjasaman.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/leggjasaman.cpp)| [leggjasaman](https://open.kattis.com/problems/leggjasaman) | 1.2 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/leggjasaman.cpp)|
+|[leynithjonusta.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/leynithjonusta.cpp)| [leynithjonusta](https://open.kattis.com/problems/leynithjonusta) | 1.1 - 1.3 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/leynithjonusta.cpp)|
 |[lubbilaerir.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/lubbilaerir.cpp)| [lubbilaerir](https://open.kattis.com/problems/lubbilaerir) | 1.1 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/lubbilaerir.cpp)|
+|[meddelande.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/meddelande.cpp)| [meddelande](https://open.kattis.com/problems/meddelande) | 1.3 - 1.4 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/meddelande.cpp)|
 |[metronome.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/metronome.cpp)| [metronome](https://open.kattis.com/problems/metronome) | 1.1 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/metronome.cpp)|
 |[millifaersla.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/millifaersla.cpp)| [millifaersla](https://open.kattis.com/problems/millifaersla) | 1.2 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/millifaersla.cpp)|
+|[modulo.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/modulo.cpp)| [modulo](https://open.kattis.com/problems/modulo) | 1.4 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/modulo.cpp)|
 |[monopol.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/monopol.cpp)| [monopol](https://open.kattis.com/problems/monopol) | 1.3 - 1.4 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/monopol.cpp)|
 |[nastyhacks.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/nastyhacks.cpp)| [nastyhacks](https://open.kattis.com/problems/nastyhacks) | 1.3 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/nastyhacks.cpp)|
 |[nsum.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/nsum.cpp)| [nsum](https://open.kattis.com/problems/nsum) | 1.2 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/nsum.cpp)|
@@ -103,7 +106,9 @@ Note that the table below is auto-generated. There might be slight inaccuracies.
 |[scrollingsign.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/scrollingsign.cpp)| [scrollingsign](https://open.kattis.com/problems/scrollingsign) | 3.0 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/scrollingsign.cpp)|
 |[shandy.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/shandy.cpp)| [shandy](https://open.kattis.com/problems/shandy) | 1.3 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/shandy.cpp)|
 |[shortcuttowhat.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/shortcuttowhat.cpp)| [shortcuttowhat](https://open.kattis.com/problems/shortcuttowhat) | 1.2 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/shortcuttowhat.cpp)|
+|[simonsays.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/simonsays.cpp)| [simonsays](https://open.kattis.com/problems/simonsays) | 1.4 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/simonsays.cpp)|
 |[skak.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/skak.cpp)| [skak](https://open.kattis.com/problems/skak) | 1.3 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/skak.cpp)|
+|[skener.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/skener.cpp)| [skener](https://open.kattis.com/problems/skener) | 1.4 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/skener.cpp)|
 |[sorttwonumbers.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/sorttwonumbers.cpp)| [sorttwonumbers](https://open.kattis.com/problems/sorttwonumbers) | 1.3 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/sorttwonumbers.cpp)|
 |[sottkvi.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/sottkvi.cpp)| [sottkvi](https://open.kattis.com/problems/sottkvi) | 1.4 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/sottkvi.cpp)|
 |[spritt.cpp](https://github.com/simonsejse/competitive-programming/tree/main/solutions/spritt.cpp)| [spritt](https://open.kattis.com/problems/spritt) | 1.3 | [![cpp](https://raw.githubusercontent.com/abrahamcalf/programming-languages-logos/master/src/cpp/cpp_24x24.png)](solutions/spritt.cpp)|
